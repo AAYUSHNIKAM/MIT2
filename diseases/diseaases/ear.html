@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Information</title>
+    <style>
+        body {
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .firstblock {
+            width: 100%;
+            height: 61vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            background-image: url(bgtop.jpeg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* navbar */
+
+        * {
+            margin: 0;
+            padding: 0;
+            color: #000000;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        div.nav {
+            /* display: flex; */
+        }
+
+        nav {
+            font-size: 1.25em;
+            background-color: #000ea0;
+            display: flex;
+            padding: 30px;
+        }
+
+        span {
+            color: green;
+        }
+
+        div.logo {
+            width: 30%;
+            margin-left: 5%;
+            scale: 1.6;
+        }
+
+        div.list {
+            width: 70%;
+            margin: 0 25%;
+        }
+
+        div.list ul {
+            display: block;
+            display: flex;
+            padding: 0px;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        div.list ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 0 30px;
+            /* transition: transform 0.3s; */
+        }
+
+        div.list ul li a:hover {
+            text-decoration: none;
+            padding: 0 30px;
+            /* -ms-transform: color(#f54655) scale(1.2); */
+            /* -webkit-transform: color(#f54655) scale(1.2); */
+            color: #f54655;
+            transition: 0.3s;
+        }
+
+        div.logo img {
+            height: 3vh;
+        }
+
+        /* ===================== Hamburger code ========================= */
+
+        .burger {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            right: 10%;
+            top: 30px;
+        }
+
+        .line {
+            width: 33px;
+            background-color: white;
+            height: 4px;
+            margin: 3px 3px;
+            display: none;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            background-color: rgb(182, 179, 179, 0.1);
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.7s;
+        }
+
+        .sidebar ul {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            right: 12%;
+        }
+
+        .sidebar li {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 25px;
+        }
+
+        .sidebar a {
+            width: 100%;
+        }
+
+        /* =================== Search Box =========================  */
+
+        div.searchbox {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        div.searchbox p {
+            padding: 5px;
+            color: #ff8282;
+            scale: 1.4;
+        }
+
+
+        /* ======================================================================== Section 1 ========================================================================= */
+
+        div.mainfeatures {
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+            height: 125vh;
+        }
+
+        div.twofeature {
+            display: flex;
+        }
+
+        div.singlefeature {
+            margin: 2vh;
+            width: 60vh;
+            height: 100vh;
+            border: 4px solid black;
+        }
+
+        /* <!-- ========================== Responsivity for Phone =========================== --> */
+
+        /* ========== Responsivity for Haburger and navbar */
+
+        @media only screen and (max-width: 480px) {
+
+            html,
+            body {
+                background-color: #ffffff;
+                /* background-color: #ffffff; */
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+
+            .firstblock {
+                width: 100%;
+                height: 30vh;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                background-image: url(bgtop.jpeg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            /* li.lines{
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          top: 20px;
+          right: 15px;
+        } */
+
+            nav li {
+                display: none;
+            }
+
+            div.line {
+                /* display: none; */
+                left: 16vh;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+
+            div.login {
+                display: flex;
+                flex-direction: column;
+            }
+
+            div.login button {
+                margin: 10px;
+                width: 20vh;
+                height: 5vh;
+                background-color: rgb(255, 255, 255);
+                color: #6474ff;
+                font-size: 1.02em;
+                border: 2px solid black;
+                border-radius: 5px;
+            }
+
+            div.login button :hover {
+                margin: 10px;
+                width: 20vh;
+                height: 5vh;
+                color: rgb(255, 255, 255);
+                background-color: #6474ff;
+                font-size: 1.02em;
+                border: 2px solid black;
+                border-radius: 5px;
+                transition: 0.7s;
+            }
+
+            div.loginmodal {
+                position: absolute;
+                width: 70%;
+                height: 30vh;
+                border: 3px solid black;
+                border-radius: 6px;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 3;
+            }
+
+            div.loginmodal button {
+                /* position: absolute; */
+                width: 17vh;
+                height: 6vh;
+                border: 3px solid black;
+                border-radius: 6px;
+                background-color: rgb(255, 213, 0);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 3vh;
+            }
+
+            div.flexloginmodal {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                display: none;
+            }
+
+            /* ------------------------------- Section 0 -------------------------------------- */
+
+            /* ------------------------------- Section 1 -------------------------------------- */
+
+            div.mainfeatures {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 44vh;
+            }
+
+            div.singlefeature {
+                margin: 2vh;
+                width: 15vh;
+                height: 15vh;
+                border: 4px solid black;
+            }
+
+            div.twofeature {
+                display: flex;
+            }
+
+
+            /* ------------------------------- Section 2 -------------------------------------- */
+
+            section.second {
+                background-color: #e0dfdf;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div.singlecommondisease {
+                margin: 2vh;
+                width: 10vh;
+                height: 15vh;
+                border: 2px solid black;
+                border-radius: 40px;
+                background-color: ghostwhite;
+            }
+
+            div.threecommondisease {
+                display: flex;
+            }
+
+            div.allcommondisease {
+                height: 80vh;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+            }
+
+            div.h1ofsec2 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                /* margin-top: 6vh; */
+            }
+
+            div.h1ofsec2 h1 {
+                margin-top: 4vh;
+            }
+
+            /* ----------------------------- Section 3 --------------------------------*/
+
+            section.third {
+                background-color: #d6daff;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div.alldocvideos {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 90vh;
+            }
+
+            div.singledocvideo {
+                margin: 1vh;
+                width: 19vh;
+                height: 45vh;
+                border: 1px solid black;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div.twodocvideos {
+                display: flex;
+            }
+
+            video {
+                width: 17vh;
+            }
+
+            p.video {
+                width: 70%;
+            }
+
+            /* ------------------------------ Section 4 -------------------------------- */
+
+            section.fourth {
+                height: 72vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #fff771;
+            }
+
+            div.slidecontainer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div.mySlides {
+                width: 35vh;
+                height: 55vh;
+                border: 2px solid black;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 50px;
+                font-weight: 800;
+                background-color: antiquewhite;
+            }
+
+            div.BlogsSlide {
+                height: 55vh;
+                width: 35vh;
+            }
+
+            .sliderightbutton {
+                width: 4vh;
+                height: 4vh;
+                background-color: #000000;
+                color: white;
+            }
+
+            .slideleftbutton {
+                width: 4vh;
+                height: 4vh;
+                background-color: #000000;
+                color: white;
+            }
+        }
+
+
+        .centreall {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+
+        /* ====================== End of Responsivity ======================== */
+
+
+        /* ============================= Navbar End ================================= */
+
+        /* ================================================================ Section 0 ================================================================ */
+
+
+        .info-box {
+            margin-top: 2vh;
+            width: 80%;
+            /* max-width: 600px; */
+            border: 4px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+
+        .disease-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .harmfull {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: green;
+        }
+
+        .disease-details {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            /* .info-box {
+                width: 95%;
+            } */
+        }
+
+        .disease-image {
+            max-width: 100%;
+            border-radius: 10px;
+            width: 820px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <nav class="sidebar">
+            <!-- <div class="logo"><img src="logo/logo.png" alt=""></div> -->
+            <div onclick=hidesidebar()><img src="cross.png" alt=""></div>
+            <div class="list">
+                <ul id="ul">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="blogs.html">blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <div class="login">
+                        <button onclick=login() class="Signup">Sing-Up</button>
+                        <button onclick=login() class="login">Log-In</button>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- Hamburger -->
+
+            <!-- <div class="burger" id="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div> -->
+        </nav>
+
+        <nav>
+            <div class="logo"><img src="logo.png" alt=""></div>
+            <div class="list">
+                <ul id="ul">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="blogs.html">blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <div class="lines" onclick=showsidebar()><a href="#">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                    </div>
+                    </a>
+                </ul>
+        </nav>
+    </div>
+
+    <!-- login modal window -->
+    <div class="flexloginmodal">
+        <div class="loginmodal">
+            <div onclick=closeloginmodal() class="closeloginmodal"><img src="cross.png" alt=""></div>
+            <a href="login.html"><button>LoG-IN as Doctor</button></a>
+            <a href="login.html"><button>LoG-IN as User</button></a>
+        </div>
+    </div>
+
+    <!-- search box -->
+    <div class="searchbox">
+        <p>Search about any disease below</p>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="search the disease">
+            <button onclick="redirect()">Search</button>
+        </div>
+    </div>
+
+    <div class="centreall">
+        <div class="info-box">
+            <img class="disease-image" src="images/ear.jpg" alt="Disease Image">
+            <div class="disease-name">Ear infection</div>
+            <div class="harmfull">
+                Non-harmfull, can be cured by homeremedies
+            </div>
+
+            <div class="disease-details">In an ear infection, narrow tubes that run from the middle ear to high in the back of the throat (eustachian tubes) can become swollen and blocked. This can lead to mucus build-up in the middle ear. This mucus can become infected and cause ear infection symptoms.
+
+                Because ear infections often clear up on their own, treatment may begin with managing pain and monitoring the problem. Sometimes, antibiotics are used to clear the infection. Some people are prone to having multiple ear infections.
+                 This can cause hearing problems and other serious complications.Otitis is a general term for inflammation in ear or ear infection, inner ear infection, middle ear infection of the ear, in both humans and other animals. When infection is present, it may be viral or bacterial.When inflammation is present due to fluid build up in the middle ear and infection is not present it is considered Otitis media with effusion.It is subdivided into the following:
+    
+                 Otitis externa, external otitis, involves inflammation (either infectious or non-infectious) of the external auditory canal, sometimes extending to the pinna or tragus.Otitis externa can be acute or chronic. It can fungal or bacterial.The most common aetiology of acute otitis externa is bacterial infection,[while chronic cases are often associated with underlying skin diseases such as eczema or psoriasis.
+                 A third form, malignant otitis externa, or necrotising otitis externa, is a potentially life-threatening, invasive infection of the external auditory canal and skull. Usually associated with Pseudomonas aeruginosa infection, this form typically occurs in older people with diabetes mellitus, or immunocompromised people.Otomycosis is the fungal form of Otitis Externa that is more common in coastal regions.
+                 Otitis media, or middle ear infection, involves the middle ear. In otitis media, the ear is infected or clogged with fluid behind the ear drum, in the normally air-filled middle-ear space. This is the most common infection.and very common in babies younger than 6 months. This condition sometimes requires a surgical procedure called myringotomy and tube insertion.
+                 Otitis interna, or labyrinthitis, involves the inner ear. The inner ear includes sensory organs for balance and hearing. When the inner ear is inflamed, vertigo is a common symptom. Other symptoms in adults include pain and drainage from ear or problems with hearing.Symptoms in children can include excessive crying, touching at ears, drainage, and fever.
+                 Treatment can range from increasing fluids and over-the-counter medicine to manage symptoms to antibiotics prescribed by medical providers.
+                 
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

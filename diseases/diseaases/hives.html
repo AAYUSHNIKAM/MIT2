@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Information</title>
+    <style>
+        body {
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .firstblock {
+            width: 100%;
+            height: 61vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            background-image: url(bgtop.jpeg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* navbar */
+
+        * {
+            margin: 0;
+            padding: 0;
+            color: #000000;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        div.nav {
+            /* display: flex; */
+        }
+
+        nav {
+            font-size: 1.25em;
+            background-color: #000ea0;
+            display: flex;
+            padding: 30px;
+        }
+
+        span {
+            color: #f54655;
+        }
+
+        div.logo {
+            width: 30%;
+            margin-left: 5%;
+            scale: 1.6;
+        }
+
+        div.list {
+            width: 70%;
+            margin: 0 25%;
+        }
+
+        div.list ul {
+            display: block;
+            display: flex;
+            padding: 0px;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        div.list ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 0 30px;
+            /* transition: transform 0.3s; */
+        }
+
+        div.list ul li a:hover {
+            text-decoration: none;
+            padding: 0 30px;
+            /* -ms-transform: color(#f54655) scale(1.2); */
+            /* -webkit-transform: color(#f54655) scale(1.2); */
+            color: #f54655;
+            transition: 0.3s;
+        }
+
+        div.logo img {
+            height: 3vh;
+        }
+
+        /* ===================== Hamburger code ========================= */
+
+        .burger {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            right: 10%;
+            top: 30px;
+        }
+
+        .line {
+            width: 33px;
+            background-color: white;
+            height: 4px;
+            margin: 3px 3px;
+            display: none;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            background-color: rgb(182, 179, 179, 0.1);
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.7s;
+        }
+
+        .sidebar ul {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            right: 12%;
+        }
+
+        .sidebar li {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 25px;
+        }
+
+        .sidebar a {
+            width: 100%;
+        }
+
+        /* =================== Search Box =========================  */
+
+        div.searchbox {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        div.searchbox p {
+            padding: 5px;
+            color: #ff8282;
+            scale: 1.4;
+        }
+
+
+        /* ======================================================================== Section 1 ========================================================================= */
+
+        div.mainfeatures {
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+            height: 125vh;
+        }
+
+        div.twofeature {
+            display: flex;
+        }
+
+        div.singlefeature {
+            margin: 2vh;
+            width: 60vh;
+            height: 100vh;
+            border: 4px solid black;
+        }
+
+        /* <!-- ========================== Responsivity for Phone =========================== --> */
+
+        /* ========== Responsivity for Haburger and navbar */
+
+        @media only screen and (max-width: 480px) {
+
+            html,
+            body {
+                background-color: #ffffff;
+                /* background-color: #ffffff; */
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+
+            .firstblock {
+                width: 100%;
+                height: 30vh;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                background-image: url(bgtop.jpeg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            /* li.lines{
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          top: 20px;
+          right: 15px;
+        } */
+
+            nav li {
+                display: none;
+            }
+
+            div.line {
+                /* display: none; */
+                left: 16vh;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+
+            div.login {
+                display: flex;
+                flex-direction: column;
+            }
+
+            div.login button {
+                margin: 10px;
+                width: 20vh;
+                height: 5vh;
+                background-color: rgb(255, 255, 255);
+                color: #6474ff;
+                font-size: 1.02em;
+                border: 2px solid black;
+                border-radius: 5px;
+            }
+
+            div.login button :hover {
+                margin: 10px;
+                width: 20vh;
+                height: 5vh;
+                color: rgb(255, 255, 255);
+                background-color: #6474ff;
+                font-size: 1.02em;
+                border: 2px solid black;
+                border-radius: 5px;
+                transition: 0.7s;
+            }
+
+            div.loginmodal {
+                position: absolute;
+                width: 70%;
+                height: 30vh;
+                border: 3px solid black;
+                border-radius: 6px;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 3;
+            }
+
+            div.loginmodal button {
+                /* position: absolute; */
+                width: 17vh;
+                height: 6vh;
+                border: 3px solid black;
+                border-radius: 6px;
+                background-color: rgb(255, 213, 0);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 3vh;
+            }
+
+            div.flexloginmodal {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                display: none;
+            }
+
+            /* ------------------------------- Section 0 -------------------------------------- */
+
+            /* ------------------------------- Section 1 -------------------------------------- */
+
+            div.mainfeatures {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 44vh;
+            }
+
+            div.singlefeature {
+                margin: 2vh;
+                width: 15vh;
+                height: 15vh;
+                border: 4px solid black;
+            }
+
+            div.twofeature {
+                display: flex;
+            }
+
+
+            /* ------------------------------- Section 2 -------------------------------------- */
+
+            section.second {
+                background-color: #e0dfdf;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div.singlecommondisease {
+                margin: 2vh;
+                width: 10vh;
+                height: 15vh;
+                border: 2px solid black;
+                border-radius: 40px;
+                background-color: ghostwhite;
+            }
+
+            div.threecommondisease {
+                display: flex;
+            }
+
+            div.allcommondisease {
+                height: 80vh;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+            }
+
+            div.h1ofsec2 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                /* margin-top: 6vh; */
+            }
+
+            div.h1ofsec2 h1 {
+                margin-top: 4vh;
+            }
+
+            /* ----------------------------- Section 3 --------------------------------*/
+
+            section.third {
+                background-color: #d6daff;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div.alldocvideos {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 90vh;
+            }
+
+            div.singledocvideo {
+                margin: 1vh;
+                width: 19vh;
+                height: 45vh;
+                border: 1px solid black;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div.twodocvideos {
+                display: flex;
+            }
+
+            video {
+                width: 17vh;
+            }
+
+            p.video {
+                width: 70%;
+            }
+
+            /* ------------------------------ Section 4 -------------------------------- */
+
+            section.fourth {
+                height: 72vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #fff771;
+            }
+
+            div.slidecontainer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div.mySlides {
+                width: 35vh;
+                height: 55vh;
+                border: 2px solid black;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 50px;
+                font-weight: 800;
+                background-color: antiquewhite;
+            }
+
+            div.BlogsSlide {
+                height: 55vh;
+                width: 35vh;
+            }
+
+            .sliderightbutton {
+                width: 4vh;
+                height: 4vh;
+                background-color: #000000;
+                color: white;
+            }
+
+            .slideleftbutton {
+                width: 4vh;
+                height: 4vh;
+                background-color: #000000;
+                color: white;
+            }
+        }
+
+
+        .centreall {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+
+        /* ====================== End of Responsivity ======================== */
+
+
+        /* ============================= Navbar End ================================= */
+
+        /* ================================================================ Section 0 ================================================================ */
+
+
+        .info-box {
+            margin-top: 2vh;
+            width: 80%;
+            /* max-width: 600px; */
+            border: 4px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+
+        .disease-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .harmfull {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: green;
+        }
+
+        .disease-details {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            /* .info-box {
+                width: 95%;
+            } */
+        }
+
+        .disease-image {
+            max-width: 100%;
+            border-radius: 10px;
+            width: 820px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <nav class="sidebar">
+            <!-- <div class="logo"><img src="logo/logo.png" alt=""></div> -->
+            <div onclick=hidesidebar()><img src="cross.png" alt=""></div>
+            <div class="list">
+                <ul id="ul">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="blogs.html">blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <div class="login">
+                        <button onclick=login() class="Signup">Sing-Up</button>
+                        <button onclick=login() class="login">Log-In</button>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- Hamburger -->
+
+            <!-- <div class="burger" id="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div> -->
+        </nav>
+
+        <nav>
+            <div class="logo"><img src="logo.png" alt=""></div>
+            <div class="list">
+                <ul id="ul">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="blogs.html">blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <div class="lines" onclick=showsidebar()><a href="#">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                    </div>
+                    </a>
+                </ul>
+        </nav>
+    </div>
+
+    <!-- login modal window -->
+    <div class="flexloginmodal">
+        <div class="loginmodal">
+            <div onclick=closeloginmodal() class="closeloginmodal"><img src="cross.png" alt=""></div>
+            <a href="login.html"><button>LoG-IN as Doctor</button></a>
+            <a href="login.html"><button>LoG-IN as User</button></a>
+        </div>
+    </div>
+
+    <!-- search box -->
+    <div class="searchbox">
+        <p>Search about any disease below</p>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="search the disease">
+            <button onclick="redirect()">Search</button>
+        </div>
+    </div>
+
+    <div class="centreall">
+        <div class="info-box">
+            <img class="disease-image" src="images/hives.jpg" alt="Disease Image">
+            <div class="disease-name">Hives</div>
+            <div class="harmfull">
+                Harmfull, can be cured by doctors consultation
+            </div>
+
+            <div class="disease-details"> Dermatitis is inflammation of the skin, typically characterized by itchiness,
+                redness and a rash.In cases of short duration, there may be small blisters, while in long-term cases the
+                skin may become thickened.The area of skin involved can vary from small to covering the entire
+                body.Dermatitis is often called eczema, and the difference between those terms is not standardized.
+
+                The exact cause of the condition is often unclear.Cases may involve a combination of allergy and poor
+                venous return. The type of dermatitis is generally determined by the person's history and the location
+                of the rash.For example, irritant dermatitis often occurs on the hands of those who frequently get them
+                wet. Allergic contact dermatitis occurs upon exposure to an allergen, causing a hypersensitivity
+                reaction in the skin.
+
+                Prevention of atopic dermatitis is typically with essential fatty acids,and may be treated with
+                moisturizers and steroid creams.The steroid creams should generally be of mid-to high strength and used
+                for less than two weeks at a time, as side effects can occur. Antibiotics may be required if there are
+                signs of skin infection.Contact dermatitis is typically treated by avoiding the allergen or
+                irritant.Antihistamines may help with sleep and decrease nighttime scratching
+
+                Dermatitis was estimated to affect 245 million people globally in 2015,[6] or 3.34% of the world
+                population. Atopic dermatitis is the most common type and generally starts in childhood. In the United
+                States, it affects about 10–30% of people. Contact dermatitis is twice as common in females as in males.
+                Allergic contact dermatitis affects about 7% of people at some point in their lives.Irritant contact
+                dermatitis is common, especially among people with certain occupations; exact rates are unclear.
+
+                In some people, atopic dermatitis is related to a gene variation that affects the skin's ability to
+                provide protection. With a weak barrier function, the skin is less able to retain moisture and protect
+                against bacteria, irritants, allergens and environmental factors — such as tobacco smoke.
+
+                In other people, atopic dermatitis is caused by too much of the bacteria Staphylococcus aureus on the
+                skin. This displaces helpful bacteria and disrupts the skin's barrier function.
+
+                A weak skin barrier function might also trigger an immune system response that causes the inflamed skin
+                and other symptoms.
+
+                Atopic dermatitis (eczema) is one of several types of dermatitis. Other common types are contact
+                dermatitis and seborrheic dermatitis (dandruff). Dermatitis isn't contagious.
+                There are several types of dermatitis including atopic dermatitis, contact dermatitis, stasis dermatitis
+                and seborrhoeic dermatitis.Dermatitis symptoms vary with all different forms of the condition. Although
+                every type of dermatitis has different symptoms, there are certain signs that are common for all of
+                them, including redness of the skin, swelling, itching and skin lesions with sometimes oozing and
+                scarring. Also, the area of the skin on which the symptoms appear tends to be different with every type
+                of dermatitis, whether on the neck, wrist, forearm, thigh or ankle. Although the location may vary, the
+                primary symptom of this condition is itchy skin. More rarely, it may appear on the genital area, such as
+                the vulva or scrotum. Symptoms of this type of dermatitis may be very intense and may come and go.
+                Irritant contact dermatitis is usually more painful than itchy.
+
+                Although the symptoms of atopic dermatitis vary from person to person, the most common symptoms are dry,
+                itchy, red skin, on light skin. However, this redness does not appear on darker skin and dermatitis can
+                appear darker brown or purple in color. Typical affected skin areas include the folds of the arms, the
+                back of the knees, wrists, face and hands. Perioral dermatitis refers to a red bumpy rash around the
+                mouth.
+
+                Dermatitis herpetiformis symptoms include itching, stinging and a burning sensation. Papules and
+                vesicles are commonly present. The small red bumps experienced in this type of dermatitis are usually
+                about 1 cm in size, red in color and may be found symmetrically grouped or distributed on the upper or
+                lower back, buttocks, elbows, knees, neck, shoulders and scalp.
+
+                The symptoms of seborrhoeic dermatitis, on the other hand, tend to appear gradually, from dry or greasy
+                scaling of the scalp (dandruff) to scaling of facial areas, sometimes with itching, but without hair
+                loss.In newborns, the condition causes a thick and yellowish scalp rash, often accompanied by a diaper
+                rash. In severe cases, symptoms may appear along the hairline, behind the ears, on the eyebrows, on the
+                bridge of the nose, around the nose, on the chest, and on the upper back.
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
