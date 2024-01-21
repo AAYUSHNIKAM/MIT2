@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Information</title>
+    <style>
+        body {
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .firstblock {
+        width: 100%;
+        height: 61vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-image: url(bgtop.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      /* navbar */
+
+      * {
+        margin: 0;
+        padding: 0;
+        color: #000000;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      a {
+        cursor: pointer;
+        text-decoration: none;
+      }
+      div.nav {
+        /* display: flex; */
+      }
+
+      nav {
+        font-size: 1.25em;
+        background-color: #000ea0;
+        display: flex;
+        padding: 30px;
+      }
+
+      span {
+        color: #f54655;
+      }
+
+      div.logo {
+        width: 30%;
+        margin-left: 5%;
+        scale: 1.6;
+      }
+
+      div.list {
+        width: 70%;
+        margin: 0 25%;
+      }
+
+      div.list ul {
+        display: block;
+        display: flex;
+        padding: 0px;
+        list-style: none;
+        text-decoration: none;
+      }
+
+      div.list ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 0 30px;
+        /* transition: transform 0.3s; */
+      }
+
+      div.list ul li a:hover {
+        text-decoration: none;
+        padding: 0 30px;
+        /* -ms-transform: color(#f54655) scale(1.2); */
+        /* -webkit-transform: color(#f54655) scale(1.2); */
+        color: #f54655;
+        transition: 0.3s;
+      }
+
+      div.logo img{
+        height: 3vh;
+      }
+
+      /* ===================== Hamburger code ========================= */
+
+      .burger {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 10%;
+        top: 30px;
+      }
+
+      .line {
+        width: 33px;
+        background-color: white;
+        height: 4px;
+        margin: 3px 3px;
+        display: none;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 2;
+        backdrop-filter: blur(10px);
+        background-color: rgb(182, 179, 179, 0.1);
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.7s;
+      }
+
+      .sidebar ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        right: 12%;
+      }
+
+      .sidebar li {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 25px;
+      }
+
+      .sidebar a {
+        width: 100%;
+      }
+
+      /* =================== Search Box =========================  */
+
+      div.searchbox{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f4;
+      }
+
+      div.searchbox p{
+        padding: 5px;
+        color: #ff8282;
+        scale: 1.4;
+      }
+
+
+      /* ======================================================================== Section 1 ========================================================================= */
+
+      div.mainfeatures{
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        height: 125vh;
+      }
+
+      div.twofeature{
+        display: flex;
+      }
+
+      div.singlefeature {
+        margin: 2vh;
+        width: 60vh;
+        height: 100vh;
+        border: 4px solid black;
+        }
+       
+         /* <!-- ========================== Responsivity for Phone =========================== --> */
+
+          /* ========== Responsivity for Haburger and navbar */
+
+      <!-- @media only screen and (max-width: 480px) {
+        html,
+        body {
+          background-color: #ffffff;
+          /* background-color: #ffffff; */
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+        }
+
+        .firstblock {
+          width: 100%;
+          height: 30vh;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          background-image: url(bgtop.jpeg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        /* li.lines{
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          top: 20px;
+          right: 15px;
+        } */
+
+        nav li{
+          display: none;
+        }
+
+        div.line {
+          /* display: none; */
+          left: 16vh;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+        }    
+
+        div.login{
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.login button {
+            margin: 10px;
+            width: 20vh;
+            height: 5vh;
+            background-color: rgb(255, 255, 255);
+            color: #6474ff;
+            font-size: 1.02em;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        div.login button :hover{
+            margin: 10px;
+            width: 20vh;
+            height: 5vh;
+            color: rgb(255, 255, 255);
+            background-color: #6474ff;
+            font-size: 1.02em;
+            border: 2px solid black;
+            border-radius: 5px;
+            transition: 0.7s;
+        }
+
+        div.loginmodal{
+            position: absolute;
+            width: 70%;
+            height: 30vh;
+            border: 3px solid black;
+            border-radius: 6px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index:3;
+        }
+
+        div.loginmodal button{
+            /* position: absolute; */
+            width: 17vh;
+            height: 6vh;
+            border: 3px solid black;
+            border-radius: 6px;
+            background-color: rgb(255, 213, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 3vh;
+        }
+
+        div.flexloginmodal{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        /* ------------------------------- Section 0 -------------------------------------- */
+
+        /* ------------------------------- Section 1 -------------------------------------- */
+
+        div.mainfeatures{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 44vh;
+        }
+
+        div.singlefeature{
+            margin: 2vh;
+            width: 15vh;
+            height: 15vh;
+            border: 4px solid black;
+        }
+      
+        div.twofeature{
+            display: flex;
+        }
+       
+
+        /* ------------------------------- Section 2 -------------------------------------- */
+
+        section.second{
+            background-color: #e0dfdf;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.singlecommondisease{
+            margin: 2vh;
+            width: 10vh;
+            height: 15vh;
+            border: 2px solid black;
+            border-radius: 40px;
+            background-color: ghostwhite;
+        }
+
+        div.threecommondisease{
+            display: flex;
+        }
+
+        div.allcommondisease{
+            height: 80vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.h1ofsec2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* margin-top: 6vh; */
+        }
+
+        div.h1ofsec2 h1{
+            margin-top: 4vh;
+        }
+
+        /* ----------------------------- Section 3 --------------------------------*/
+
+        section.third{
+          background-color: #d6daff;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        div.alldocvideos{
+          display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        div.singledocvideo{
+            margin: 1vh;
+            width: 19vh;
+            height: 45vh;
+            border: 1px solid black;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+      
+        div.twodocvideos{
+            display: flex;
+        }
+
+        video{
+          width: 17vh;
+        }
+
+        p.video{
+          width: 70%;
+        }
+       
+        /* ------------------------------ Section 4 -------------------------------- */
+
+        section.fourth{
+          height: 72vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff771;
+        }
+
+        div.slidecontainer{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        div.mySlides{
+          width: 35vh;
+          height: 55vh;
+          border: 2px solid black;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 50px;
+          font-weight: 800;
+          background-color: antiquewhite;
+        }
+
+        div.BlogsSlide{
+          height: 55vh;
+          width: 35vh;
+        }
+
+        .sliderightbutton{
+          width: 4vh;
+          height: 4vh;
+          background-color: #000000;
+          color: white;
+        }
+
+        .slideleftbutton{
+          width: 4vh;
+          height: 4vh;
+          background-color: #000000;
+          color: white;
+        }
+      }
+
+
+      .centreall{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+
+
+
+        /* ====================== End of Responsivity ======================== */
+
+
+    /* ============================= Navbar End ================================= */
+
+    /* ================================================================ Section 0 ================================================================ */
+
+
+        .info-box {
+            margin-top: 2vh;
+            width: 80%;
+            /* max-width: 600px; */
+            border: 4px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+
+        .disease-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .harmfull {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: green;
+        }
+      
+        .disease-details {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            /* .info-box {
+                width: 95%;
+            } */
+        }
+
+        .disease-image {
+            max-width: 100%;
+            border-radius: 10px;
+            width: 820px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <nav class="sidebar">
+          <!-- <div class="logo"><img src="logo/logo.png" alt=""></div> -->
+          <div onclick=hidesidebar()><img src="cross.png" alt=""></div>
+          <div class="list">
+            <ul id="ul">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="skills.html">Skills</a></li>
+              <li><a href="blogs.html">blogs</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <div class="login">
+              <button onclick=login() class="Signup">Sing-Up</button>
+              <button onclick=login() class="login">Log-In</button>
+              </div>
+            </ul>
+          </div>
+  
+          <!-- Hamburger -->
+  
+          <!-- <div class="burger" id="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div> -->
+        </nav>
+  
+        <nav>
+          <div class="logo"><img src="logo.png" alt=""></div>
+          <div class="list">
+            <ul id="ul">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="skills.html">Skills</a></li>
+              <li><a href="blogs.html">blogs</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <div class="lines" onclick=showsidebar()><a href="#">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </div>
+              </a>
+            </ul>
+        </nav>
+      </div>
+
+      <!-- login modal window -->
+      <div class="flexloginmodal">
+      <div class="loginmodal">
+          <div onclick=closeloginmodal() class="closeloginmodal"><img src="cross.png" alt=""></div>
+          <a href="login.html"><button>LoG-IN as Doctor</button></a>
+          <a href="login.html"><button>LoG-IN as User</button></a>
+      </div>
+      </div>
+
+      <!-- search box -->
+      <div class="searchbox">
+          <p>Search about any disease below</p>
+          <div class="search-container">
+              <input type="text" id="searchInput" placeholder="search the disease">
+              <button onclick="redirect()">Search</button>
+          </div>
+      </div>
+
+      <div class="centreall">
+<div class="info-box">
+    <img class="disease-image" src="diseaseimages/acne/Acne.jpeg" alt="Disease Image">
+    <div class="disease-name">Acne</div>
+  <div class="harmfull">
+     Harmfull, very RARE, could be solved using few homeremidies
+  </div>
+  
+    <div class="disease-details">Acne, also known as acne vulgaris, is a long-term skin condition that occurs when dead skin cells and oil from the skin clog hair follicles.[10] Typical features of the condition include blackheads or whiteheads, pimples, oily skin, and possible scarring.[1][2][11] It primarily affects skin with a relatively high number of oil glands, including the face, upper part of the chest, and back.[12] The resulting appearance can lead to lack of confidence, anxiety, reduced self-esteem, and, in extreme cases, depression or thoughts of suicide.[3][4]
+
+        Susceptibility to acne is primarily genetic in 80% of cases.[2] The roles of diet and cigarette smoking in the condition are unclear, and neither cleanliness nor exposure to sunlight appear to play a part.[2][13][14] In both sexes, hormones called androgens appear to be part of the underlying mechanism, by causing increased production of sebum.[5] Another common factor is the excessive growth of the bacterium Cutibacterium acnes, which is present on the skin.[15]
+        
+        Treatments for acne are available, including lifestyle changes, medications, and medical procedures. Eating fewer simple carbohydrates such as sugar may minimize the condition.[7] Treatments applied directly to the affected skin, such as azelaic acid, benzoyl peroxide, and salicylic acid, are commonly used.[8] Antibiotics and retinoids are available in formulations that are applied to the skin and taken by mouth for the treatment of acne.[8] However, resistance to antibiotics may develop as a result of antibiotic therapy.[16] Several types of birth control pills help prevent acne in women.[8] Medical professionals typically reserve isotretinoin pills for severe acne, due to greater potential side effects.[8][17] Early and aggressive treatment of acne is advocated by some in the medical community to decrease the overall long-term impact on individuals.[4]
+        
+        In 2015, acne affected approximately 633 million people globally, making it the eighth-most common disease worldwide.[9][18] Acne commonly occurs in adolescence and affects an estimated 80–90% of teenagers in the Western world.[19][20][21] Some rural societies report lower rates of acne than industrialized ones.[21][22] Children and adults may also be affected before and after puberty.[23] Although acne becomes less common in adulthood, it persists in nearly half of affected people into their twenties and thirties, and a smaller group continues to have difficulties in their forties.[2]
+        
+        Classification
+        The severity of acne vulgaris (Gr. ἀκµή, "point" + L. vulgaris, "common")[24] can be classified as mild, moderate, or severe to determine an appropriate treatment regimen.[20] There is no universally accepted scale for grading acne severity.[15] The presence of clogged skin follicles (known as comedones) limited to the face with occasional inflammatory lesions defines mild acne.[20] Moderate severity acne is said to occur when a higher number of inflammatory papules and pustules occur on the face, compared to mild cases of acne, and appear on the trunk of the body.[20] Severe acne is said to occur when nodules (the painful 'bumps' lying under the skin) are the characteristic facial lesions, and involvement of the trunk is extensive.[20][25]
+        
+        Large nodules were previously called cysts. The term nodulocystic has been used in the medical literature to describe severe cases of inflammatory acne.[25] True cysts are rare in those with acne, and the term severe nodular acne is now the preferred terminology.[25]
+        
+        Acne inversa (L. invertō, "upside-down") and acne rosacea (rosa, "rose-colored" + -āceus, "forming") are not forms of acne and are alternate names that respectively refer to the skin conditions hidradenitis suppurativa (HS) and rosacea.[26][27][28] Although HS shares certain overlapping features with acne vulgaris, such as a tendency to clog skin follicles with skin cell debris, the condition otherwise lacks the hallmark features of acne and is therefore considered a distinct skin disorder.[26]
+        
+        Signs and symptoms
+        A photograph of a human face with nodular acne
+        A severe case of nodular acne
+        A photograph of a human back with nodular acne
+        Nodular acne on the back
+        Acne pimples can appear in any part of the head; severity and position differs in each person.
+        A typical case of a teenager with acne, pimples in various parts of the head.
+        Typical features of acne include increased secretion of oily sebum by the skin, microcomedones, comedones, papules, nodules (large papules), pustules, and often results in scarring.[29][30] The appearance of acne varies with skin color. It may result in psychological and social problems.[20]
+        
+        Scars
+        Acne scars are caused by inflammation within the dermis and are estimated to affect 95% of people with acne vulgaris.[31] Abnormal healing and dermal inflammation create the scar.[32] Scarring is most likely to take place with severe acne but may occur with any form of acne vulgaris.[31] Acne scars are classified based on whether the abnormal healing response following dermal inflammation leads to excess collagen deposition or loss at the site of the acne lesion.[33]
+        
+        Atrophic acne scars have lost collagen from the healing response and are the most common type of acne scar (accounting for approximately 75% of all acne scars).[32][33] Ice-pick scars, boxcar scars, and rolling scars are subtypes of atrophic acne scars.[31] Boxcar scars are round or ovoid indented scars with sharp borders and vary in size from 1.5–4 mm across.[32] Ice-pick scars are narrow (less than 2 mm across), deep scars that extend into the dermis.[32] Rolling scars are broader than ice-pick and boxcar scars (4–5 mm across) and have a wave-like pattern of depth in the skin.[32]
+        
+        Hypertrophic scars are uncommon and are characterized by increased collagen content after the abnormal healing response.[32] They are described as firm and raised from the skin.[32][34] Hypertrophic scars remain within the original margins of the wound, whereas keloid scars can form scar tissue outside of these borders.[32] Keloid scars from acne occur more often in men and people with darker skin, and usually occur on the trunk of the body.[32]
+        
+        In November 2021 a study[35] was published exposing the consensus of twenty-four renowned international plastic surgeons and dermatologists about the most effective energy-based devices for the treatment of acne scars.[36]
+        
+        Pigmentation
+        After an inflamed nodular acne lesion resolves, it is common for the skin to darken in that area, which is known as postinflammatory hyperpigmentation (PIH). The inflammation stimulates specialized pigment-producing skin cells (known as melanocytes) to produce more melanin pigment, which leads to the skin's darkened appearance.[37] PIH occurs more frequently in people with darker skin color.[38] Pigmented scar is a common term used for PIH, but is misleading as it suggests the color change is permanent. Often, PIH can be prevented by avoiding any aggravation of the nodule and can fade with time. However, untreated PIH can last for months, years, or even be permanent if deeper layers of skin are affected.[39] Even minimal skin exposure to the sun's ultraviolet rays can sustain hyperpigmentation.[37] Daily use of SPF 15 or higher sunscreen can minimize such a risk.[39] Whitening agents like azelaic acid, arbutin or else may be used to improve hyperpigmentation.[40]
+        
+        Causes
+        Risk factors for the development of acne, other than genetics, have not been conclusively identified. Possible secondary contributors include hormones, infections, diet, and stress. Studies investigating the impact of smoking on the incidence and severity of acne have been inconclusive.[2][41][42] Sunlight and cleanliness are not associated with acne.[14]
+        
+        Genes
+        Acne appears to be highly heritable; genetics explain 81% of the variation in the population.[15] Studies performed in affected twins and first-degree relatives further demonstrate the strongly inherited nature of acne.[2][15] Acne susceptibility is likely due to the influence of multiple genes, as the disease does not follow a classic (Mendelian) inheritance pattern. These gene candidates include certain variations in tumor necrosis factor-alpha (TNF-alpha), IL-1 alpha, and CYP1A1 genes, among others.[19] The 308 G/A single nucleotide polymorphism variation in the gene for TNF is associated with an increased risk for acne.[43] Acne can be a feature of rare genetic disorders such as Apert's syndrome.[15] Severe acne may be associated with XYY syndrome.[44]
+        
+        Hormones
+        Hormonal activity, such as occurs during menstrual cycles and puberty, may contribute to the formation of acne. During puberty, an increase in sex hormones called androgens causes the skin follicle glands to grow larger and make more oily sebum.[12] The androgen hormones testosterone, dihydrotestosterone (DHT), and dehydroepiandrosterone (DHEA) are all linked to acne. High levels of growth hormone (GH) and insulin-like growth factor 1 (IGF-1) are also associated with worsened acne.[45] Both androgens and IGF-1 seem to be essential for acne to occur, as acne does not develop in individuals with complete androgen insensitivity syndrome (CAIS) or Laron syndrome (insensitivity to GH, resulting in very low IGF-1 levels).[46][47]
+        
+        Medical conditions that commonly cause a high-androgen state, such as polycystic ovary syndrome, congenital adrenal hyperplasia, and androgen-secreting tumors, can cause acne in affected individuals.[48][49] Conversely, people who lack androgenic hormones or are insensitive to the effects of androgens rarely have acne.[48] Pregnancy can increase androgen levels, and consequently, oily sebum synthesis.[49][50] Acne can be a side effect of testosterone replacement therapy or anabolic steroid use.[1][51] Over-the-counter bodybuilding and dietary supplements often contain illegally added anabolic steroids.[1][52]
+        
+        Infections
+        The anaerobic bacterial species Cutibacterium acnes (formerly Propionibacterium acnes) contributes to the development of acne, but its exact role is not well understood.[2] There are specific sub-strains of C. acnes associated with normal skin and others with moderate or severe inflammatory acne.[53] It is unclear whether these undesirable strains evolve on-site or are acquired, or possibly both depending on the person. These strains have the capability of changing, perpetuating, or adapting to the abnormal cycle of inflammation, oil production, and inadequate sloughing of dead skin cells from acne pores. Infection with the parasitic mite Demodex is associated with the development of acne.[30][54] It is unclear whether eradication of the mite improves acne.[54]
+        
+        Diet
+        High-glycemic-load diets have been found to have different degrees of effect on acne severity.[7][55][56] Multiple randomized controlled trials and nonrandomized studies have found a lower-glycemic-load diet to be effective in reducing acne.[55] There is weak observational evidence suggesting that dairy milk consumption is positively associated with a higher frequency and severity of acne.[54][55][57][58][59] Milk contains whey protein and hormones such as bovine IGF-1 and precursors of dihydrotestosterone.[55] Studies suggest these components promote the effects of insulin and IGF-1 and thereby increase the production of androgen hormones, sebum, and promote the formation of comedones.[55] Available evidence does not support a link between eating chocolate or salt and acne severity.[57][58] Few studies have examined the relationship between obesity and acne.[2] Vitamin B12 may trigger skin outbreaks similar to acne (acneiform eruptions), or worsen existing acne when taken in doses exceeding the recommended daily intake.[60]
+        
+        Stress
+        There are few high-quality studies to demonstrate that stress causes or worsens acne.[61] Despite being controversial, some research indicates that increased acne severity is associated with high stress levels in certain contexts, such as hormonal changes seen in premenstrual syndrome.[62][63]
+        
+        Other
+        Some individuals experience severe intensification of their acne when they are exposed to hot humid climates; this is due to bacteria and fungus thriving in warm, moist environments. This climate-induced acne exacerbation has been termed tropical acne. Mechanical obstruction of skin follicles with helmets or chinstraps can worsen pre-existing acne.[64] However, when acne is caused by mechanical obstruction it is not considered a form of acne vulgaris when being very technical, and would be an other acneiform eruption known as Acne mechanica. Several medications can also worsen pre-existing acne; this condition is the acne medicamentosa form of acne. Examples of such medications include lithium, hydantoin, isoniazid, glucocorticoids, iodides, bromides, and testosterone.[44] When acne medicamentosa is specifically caused by anabolic–androgenic steroids it can simply be referred to as steroid acne. Genetically susceptible individuals can get acne breakouts as a result of polymorphous light eruption; a condition triggered by sunlight and artificial UV light exposure. This form of acne is called Acne aestivalis and is specifically caused by intense UVA light exposure. Affected individuals usually experience seasonal acne breakouts on their upper arms, shoulder girdle, back, and chest. The breakouts typically occur one-to-three days after exposure to intese UVA radiation. Unlike other forms of acne, the condition spares the face; this could possibly be a result of the pathogenesis of polymorphous light eruption, in which areas of the skin that are newly exposed to intense ultraviolet radiation are affected. Since faces are typically left uncovered at all stages of life, there is little-to-no likelihood for an eruption to appear there. Studies show that both polymorphous light eruption outbreaks and the acne aestivalis breakout response can be prevented by topical antioxidants combined with the application of a broad spectrum sunscreen.[65]
+        
+        Pathophysiology
+        
+        Simplistic representation of the formation of acne comedones.
+        Three images illustrating hair follicle anatomy
+        Hair follicle anatomy demonstrating a healthy hair follicle (pictured left), a whitehead or closed comedo (middle picture), and a blackhead or open comedo (pictured right)
+        Image illustrating a flowchart of the pathophysiology of acne
+        Flowchart of the pathological sequence of events leading to acne
+        Acne vulgaris is a chronic skin disease of the pilosebaceous unit and develops due to blockages in the skin's hair follicles. These blockages occur as a result of the following four abnormal processes: increased oily sebum production (influenced by androgens), excessive deposition of the protein keratin leading to comedo formation, colonization of the follicle by Cutibacterium acnes (C. acnes) bacteria, and the local release of pro-inflammatory chemicals in the skin.[53]
+        
+        The earliest pathologic change is the formation of a plug (a microcomedone), which is driven primarily by excessive growth, reproduction, and accumulation of skin cells in the hair follicle.[1] In healthy skin, the skin cells that have died come up to the surface and exit the pore of the hair follicle.[10] In people with acne, the increased production of oily sebum causes the dead skin cells to stick together.[10] The accumulation of dead skin cell debris and oily sebum blocks the pore of the hair follicle, thus forming the microcomedone.[10] The C. acnes biofilm within the hair follicle worsens this process.[48] If the microcomedone is superficial within the hair follicle, the skin pigment melanin is exposed to air, resulting in its oxidation and dark appearance (known as a blackhead or open comedo).[1][10][20] In contrast, if the microcomedone occurs deep within the hair follicle, this causes the formation of a whitehead (known as a closed comedo).[1][10]
+        
+        The main hormonal driver of oily sebum production in the skin is dihydrotestosterone.[1] Another androgenic hormone responsible for increased sebaceous gland activity is DHEA-S. The adrenal glands secrete higher amounts of DHEA-S during adrenarche (a stage of puberty), and this leads to an increase in sebum production. In a sebum-rich skin environment, the naturally occurring and largely commensal skin bacterium C. acnes readily grows and can cause inflammation within and around the follicle due to activation of the innate immune system.[10] C. acnes triggers skin inflammation in acne by increasing the production of several pro-inflammatory chemical signals (such as IL-1α, IL-8, TNF-α, and LTB4); IL-1α is essential to comedo formation.[48]
+        
+        C. acnes' ability to bind and activate a class of immune system receptors known as toll-like receptors (TLRs), especially TLR2 and TLR4, is a core mechanism of acne-related skin inflammation.[48][66][67] Activation of TLR2 and TLR4 by C. acnes leads to increased secretion of IL-1α, IL-8, and TNF-α.[48] The release of these inflammatory signals attracts various immune cells to the hair follicle, including neutrophils, macrophages, and Th1 cells.[48] IL-1α stimulates increased skin cell activity and reproduction, which, in turn, fuels comedo development.[48] Furthermore, sebaceous gland cells produce more antimicrobial peptides, such as HBD1 and HBD2, in response to the binding of TLR2 and TLR4.[48]
+        
+        C. acnes also provokes skin inflammation by altering the fatty composition of oily sebum.[48] Oxidation of the lipid squalene by C. acnes is of particular importance. Squalene oxidation activates NF-κB (a protein complex) and consequently increases IL-1α levels.[48] Additionally, squalene oxidation increases 5-lipoxygenase enzyme activity, which catalyzes the conversion of arachidonic acid to leukotriene B4 (LTB4).[48] LTB4 promotes skin inflammation by acting on the peroxisome proliferator-activated receptor alpha (PPARα) protein.[48] PPARα increases the activity of activator protein 1 (AP-1) and NF-κB, thereby leading to the recruitment of inflammatory T cells.[48] C. acnes' ability to convert sebum triglycerides to pro-inflammatory free fatty acids via secretion of the enzyme lipase further explains its inflammatory properties.[48] These free fatty acids spur increased production of cathelicidin, HBD1, and HBD2, thus leading to further inflammation.[48]
+        
+        This inflammatory cascade typically leads to the formation of inflammatory acne lesions, including papules, infected pustules, or nodules.[1] If the inflammatory reaction is severe, the follicle can break into the deeper layers of the dermis and subcutaneous tissue and cause the formation of deep nodules.[1][68][69] The involvement of AP-1 in the aforementioned inflammatory cascade activates matrix metalloproteinases, which contribute to local tissue destruction and scar formation.[48]
+        
+        Along with the bacteria C. acnes, the bacterial species Staphylococcus epidermidis (S. epidermidis) also takes a part in the physiopathology of acne vulgaris. The proliferation of S. epidermidis with C. acnes causes the formation of biofilms, which blocks the hair follicles and pores, creating an anaerobic environment under the skin. This enables for increased growth of both C. acnes and S. epidermidis under the skin. The proliferation of C. acnes causes the formation of biofilms and a biofilm matrix, making it even harder to treat the acne.[70]
+        
+        Diagnosis
+        Acne vulgaris is diagnosed based on a medical professional's clinical judgment.[15] The evaluation of a person with suspected acne should include taking a detailed medical history about a family history of acne, a review of medications taken, signs or symptoms of excessive production of androgen hormones, cortisol, and growth hormone.[15] Comedones (blackheads and whiteheads) must be present to diagnose acne. In their absence, an appearance similar to that of acne would suggest a different skin disorder.[28] Microcomedones (the precursor to blackheads and whiteheads) are not visible to the naked eye when inspecting the skin and require a microscope to be seen.[28] Many features may indicate that a person's acne vulgaris is sensitive to hormonal influences. Historical and physical clues that may suggest hormone-sensitive acne include onset between ages 20 and 30; worsening the week before a woman's period; acne lesions predominantly over the jawline and chin; and inflammatory/nodular acne lesions.[1]
+        
+        Several scales exist to grade the severity of acne vulgaris, but disagreement persists about the ideal one for diagnostic use.[71][72] Cook's acne grading scale uses photographs to grade severity from 0 to 8, with higher numbers representing more severe acne. This scale was the first to use a standardized photographic protocol to assess acne severity; since its creation in 1979, the scale has undergone several revisions.[72] The Leeds acne grading technique counts acne lesions on the face, back, and chest and categorizes them as inflammatory or non-inflammatory. Leeds scores range from 0 (least severe) to 10 (most severe) though modified scales have a maximum score of 12.[72][73] The Pillsbury acne grading scale classifies the severity of the acne from grade 1 (least severe) to grade 4 (most severe).[71][74]
+        
+        Differential diagnosis
+        Many skin conditions can mimic acne vulgaris, and these are collectively known as acneiform eruptions.[28] Such conditions include angiofibromas, epidermal cysts, flat warts, folliculitis, keratosis pilaris, milia, perioral dermatitis, and rosacea, among others.[20][75] Age is one factor that may help distinguish between these disorders. Skin disorders such as perioral dermatitis and keratosis pilaris can appear similar to acne but tend to occur more frequently in childhood. Rosacea tends to occur more frequently in older adults.[20] Facial redness triggered by heat or the consumption of alcohol or spicy food is also more suggestive of rosacea.[76] The presence of comedones helps health professionals differentiate acne from skin disorders that are similar in appearance.[8] Chloracne and occupational acne due to exposure to certain chemicals & industrial compounds, may look very similar to acne vulgaris.[77]
+        
+        Management
+        Many different treatments exist for acne. These include alpha hydroxy acid, anti-androgen medications, antibiotics, antiseborrheic medications, azelaic acid, benzoyl peroxide, hormonal treatments, keratolytic soaps, nicotinamide, retinoids, and salicylic acid.[78] Acne treatments work in at least four different ways, including the following: reducing inflammation, hormonal manipulation, killing C. acnes, and normalizing skin cell shedding and sebum production in the pore to prevent blockage.[15] Typical treatments include topical therapies such as antibiotics, benzoyl peroxide, and retinoids, and systemic therapies, including antibiotics, hormonal agents, and oral retinoids.[20][79]
+        
+        Recommended therapies for first-line use in acne vulgaris treatment include topical retinoids, benzoyl peroxide, and topical or oral antibiotics.[80] Procedures such as light therapy and laser therapy are not first-line treatments and typically have only an add on role due to their high cost and limited evidence.[79] Blue light therapy is of unclear benefit.[81] Medications for acne target the early stages of comedo formation and are generally ineffective for visible skin lesions; acne generally improves between eight and twelve weeks after starting therapy.[15]
+        
+        People often view acne as a short-term condition, some expecting it to disappear after puberty. This misconception can lead to depending on self-management or problems with long-term adherence to treatment. Communicating the long-term nature of the condition and better access to reliable information about acne can help people know what to expect from treatments.[82][83]
+        
+        Skin care
+        In general, it is recommended that people with acne do not wash affected skin more than twice daily.[15] The application of a fragrance-free moisturizer to sensitive and acne-prone skin may reduce irritation. Skin irritation from acne medications typically peaks at two weeks after onset of use and tends to improve with continued use.[15] Dermatologists recommend using cosmetic products that specifically say non-comedogenic, oil-free, and will not clog pores.[15]
+        
+        Acne vulgaris patients, even those with oily skin,[84] should moisturize in order to support the skin's moisture barrier since skin barrier dysfunction may contribute to acne.[84] Moisturizers, especially ceramide-containing moisturizers, as an adjunct therapy are particularly helpful for the dry skin and irritation that commonly results from topical acne treatment. Studies show that ceramide-containing moisturizers are important for optimal skin care; they enhance acne therapy adherence and complement existing acne therapies.[84] In a study where acne patients used 1.2% clindamycin phosphate / 2.5% benzoyl peroxide gel in the morning and applied a micronized 0.05% tretinoin gel in the evening the overwhelming majority of patients experienced no cutaneous adverse events throughout the study. It was concluded that using ceramide cleanser and ceramide moisturizing cream caused the favorable tolerability, did not interfere with the treatment efficacy, and improved adherence to the regimen.[85] The importance of preserving the acidic mantle and its barrier functions is widely accepted in the scientific community. Thus, maintaining a pH in the range 4.5 - 5.5 is essential in order to keep the skin surface in its optimal, healthy conditions.[86][87][88][89][90]
+        
+        Diet
+        Causal relationship is rarely observed with diet/nutrition and dermatologic conditions. Rather, associations — some of them compelling — have been found between diet and outcomes including disease severity and the number of conditions experienced by a patient. Evidence is emerging in support of medical nutrition therapy as a way of reducing the severity and incidence of dermatologic diseases, including acne. Researchers observed a link between high glycemic index diets and acne.[91] Dermatologists also recommend a diet low in simple sugars as a method of improving acne.[55] As of 2014, the available evidence is insufficient to use milk restriction for this purpose.[55]
+        
+        Medications
+        Benzoyl peroxide
+        A tube of benzoyl peroxide gel
+        Benzoyl peroxide cream is a common treatment for acne vulgaris.
+        Benzoyl peroxide (BPO) is a first-line treatment for mild and moderate acne due to its effectiveness and mild side-effects (mainly skin irritation). In the skin follicle, benzoyl peroxide kills C. acnes by oxidizing its proteins through the formation of oxygen free radicals and benzoic acid. These free radicals likely interfere with the bacterium's metabolism and ability to make proteins.[92][93] Additionally, benzoyl peroxide is mildly effective at breaking down comedones and inhibiting inflammation.[80][93] Combination products use benzoyl peroxide with a topical antibiotic or retinoid, such as benzoyl peroxide/clindamycin and benzoyl peroxide/adapalene, respectively.[38] Topical benzoyl peroxide is effective at treating acne.[94]
+        
+        Side effects include increased skin photosensitivity, dryness, redness, and occasional peeling.[95] Sunscreen use is often advised during treatment, to prevent sunburn. Lower concentrations of benzoyl peroxide are just as effective as higher concentrations in treating acne but are associated with fewer side effects.[93][96] Unlike antibiotics, benzoyl peroxide does not appear to generate bacterial antibiotic resistance.[95]
+        
+        Retinoids
+        Retinoids are medications that reduce inflammation, normalize the follicle cell life cycle, and reduce sebum production.[48][97] They are structurally related to vitamin A.[97] Studies show dermatologists and primary care doctors underprescribe them for acne.[15] The retinoids appear to influence the cell life cycle in the follicle lining. This helps prevent the accumulation of skin cells within the hair follicle that can create a blockage. They are a first-line acne treatment,[1] especially for people with dark-colored skin. Retinoids are known to lead to faster improvement of postinflammatory hyperpigmentation.[38]
+        
+        Topical retinoids include adapalene, retinol, retinaldehyde, isotretinoin, tazarotene, trifarotene, and tretinoin.[50][98][99] They often cause an initial flare-up of acne and facial flushing and can cause significant skin irritation. Generally speaking, retinoids increase the skin's sensitivity to sunlight and are therefore recommended for use at night.[1] Tretinoin is the least expensive of the topical retinoids and is the most irritating to the skin, whereas adapalene is the least irritating but costs significantly more.[1][100] Most formulations of tretinoin are incompatible for use with benzoyl peroxide.[15] Tazarotene is the most effective and expensive topical retinoid but is usually not as well tolerated.[1][100] In 2019 a tazarotene lotion formulation, marketed to be a less irritating option, was approved by the FDA.[101] Retinol is a form of vitamin A that has similar but milder effects and is present in many over-the-counter moisturizers and other topical products.
+        
+        Isotretinoin is an oral retinoid that is very effective for severe nodular acne, and moderate acne that is stubborn to other treatments.[1][20] One to two months of use is typically adequate to see improvement. Acne often resolves completely or is much milder after a 4–6 month course of oral isotretinoin.[1] After a single round of treatment, about 80% of people report an improvement, with more than 50% reporting complete remission.[20] About 20% of people require a second course, but 80% of those report improvement, resulting in a cumulative 96% efficacy rate.[20]
+        
+        There are concerns that isotretinoin is linked to adverse effects, like depression, suicidality, and anemia. There is no clear evidence to support some of these claims.[1][20] Isotretinoin has been found in some studies to be superior to antibiotics or placebo in reducing acne lesions.[17] However, a 2018 review comparing inflammatory lesions after treatment with antibiotics or isotretinoin found no difference.[102] The frequency of adverse events was about twice as high with isotretinoin use, although these were mostly dryness-related events.[17] No increased risk of suicide or depression was conclusively found.[17]
+        
+        Medical authorities strictly regulate isotretinoin use in women of childbearing age due to its known harmful effects in pregnancy.[20] For such a woman to be considered a candidate for isotretinoin, she must have a confirmed negative pregnancy test and use an effective form of birth control.[20] In 2008, the United States started the iPLEDGE program to prevent isotretinoin use during pregnancy.[103] iPledge requires the woman to have two negative pregnancy tests and to use two types of birth control for at least one month before isotretinoin therapy begins and one month afterward.[103] The effectiveness of the iPledge program is controversial due to continued instances of contraception nonadherence.[103][104]
+        
+        Antibiotics
+        People may apply antibiotics to the skin or take them orally to treat acne. They work by killing C. acnes and reducing inflammation.[20][95][105] Although multiple guidelines call for healthcare providers to reduce the rates of prescribed oral antibiotics, many providers do not follow this guidance.[106] Oral antibiotics remain the most commonly prescribed systemic therapy for acne.[106] Widespread broad-spectrum antibiotic overuse for acne has led to higher rates of antibiotic-resistant C. acnes strains worldwide, especially to the commonly used tetracycline (e.g., doxycycline) and macrolide antibiotics (e.g., topical erythromycin).[16][95][105][106] Therefore, dermatologists prefer antibiotics as part of combination therapy and not for use alone.[15]
+        
+        Commonly used antibiotics, either applied to the skin or taken orally, include clindamycin, erythromycin, metronidazole, sulfacetamide, and tetracyclines (e.g., doxycycline or minocycline).[50] Doxycycline 40 milligrams daily (low-dose) appears to have similar efficacy to 100 milligrams daily and has fewer gastrointestinal side effects.[15] However, low-dose doxycycline is not FDA-approved for the treatment of acne.[107] Antibiotics applied to the skin are typically used for mild to moderately severe acne.[20] Oral antibiotics are generally more effective than topical antibiotics and produce faster resolution of inflammatory acne lesions than topical applications.[1] The Global Alliance to Improve Outcomes in Acne recommends that topical and oral antibiotics are not used together.[105]
+        
+        Oral antibiotics are recommended for no longer than three months as antibiotic courses exceeding this duration are associated with the development of antibiotic resistance and show no clear benefit over shorter durations.[105] If long-term oral antibiotics beyond three months are used, then it is recommended that benzoyl peroxide or a retinoid be used at the same time to limit the risk of C. acnes developing antibiotic resistance.[105]
+        
+        The antibiotic dapsone is effective against inflammatory acne when applied to the skin. It is generally not a first-line choice due to its higher cost and a lack of clear superiority over other antibiotics.[1][15] Topical dapsone is sometimes a preferred therapy in women or for people with sensitive or darker-toned skin.[15] It is not recommended for use with benzoyl peroxide due to the risk of causing yellow-orange skin discoloration with this combination.[10] Minocycline is an effective acne treatment, but it is not a first-line antibiotic due to a lack of evidence that it is better than other treatments, and concerns about its safety compared to other tetracyclines.[108]
+        
+        Sarecycline is the most recent oral antibiotic developed specifically for the treatment of acne, and is FDA-approved for the treatment of moderate to severe inflammatory acne in patients nine years of age and older.[109][110][111] It is a narrow-spectrum tetracycline antibiotic that exhibits the necessary antibacterial activity against pathogens related to acne vulgaris and a low propensity for inducing antibiotic resistance.[112][113] In clinical trials, sarecycline demonstrated clinical efficacy in reducing inflammatory acne lesions as early as three weeks and reduced truncal (back and chest) acne.[111][114]
+        
+        Hormonal agents
+        In women, the use of combined birth control pills can improve acne.[115] These medications contain an estrogen and a progestin.[116] They work by decreasing the production of androgen hormones by the ovaries and by decreasing the free and hence biologically active fractions of androgens, resulting in lowered skin production of sebum and consequently reduce acne severity.[10][117] First-generation progestins such as norethindrone and norgestrel have androgenic properties and may worsen acne.[15] Although oral estrogens decrease IGF-1 levels in some situations, which could theoretically improve acne symptoms,[118][119] combined birth control pills do not appear to affect IGF-1 levels in fertile women.[116][120] Cyproterone acetate-containing birth control pills seem to decrease total and free IGF-1 levels.[121] Combinations containing third- or fourth-generation progestins, including desogestrel, dienogest, drospirenone, or norgestimate, as well as birth control pills containing cyproterone acetate or chlormadinone acetate, are preferred for women with acne due to their stronger antiandrogenic effects.[122][123][124] Studies have shown a 40 to 70% reduction in acne lesions with combined birth control pills.[117] A 2014 review found that oral antibiotics appear to be somewhat more effective than birth control pills at reducing the number of inflammatory acne lesions at three months.[125] However, the two therapies are approximately equal in efficacy at six months for decreasing the number of inflammatory, non-inflammatory, and total acne lesions.[125] The authors of the analysis suggested that birth control pills may be a preferred first-line acne treatment, over oral antibiotics, in certain women due to similar efficacy at six months and a lack of associated antibiotic resistance.[125] In contrast to combined birth control pills, progestogen-only birth control forms that contain androgenic progestins have been associated with worsened acne.[106]</div>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

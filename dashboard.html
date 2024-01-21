@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+    <style>
+
+    /* ================================================================ Section 0 ================================================================ */
+
+    /* ============================= Navbar ================================= */
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        width: 100%;
+      }
+
+      .firstblock {
+        width: 100%;
+        height: 61vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-image: url(bgtop.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      /* navbar */
+
+      * {
+        margin: 0;
+        padding: 0;
+        color: #000000;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      a {
+        cursor: pointer;
+        text-decoration: none;
+      }
+      div.nav {
+        /* display: flex; */
+      }
+
+      nav {
+        font-size: 1.25em;
+        background-color: #000ea0;
+        display: flex;
+        padding: 30px;
+      }
+
+      span {
+        color: #f54655;
+      }
+
+      div.logo {
+        width: 30%;
+        margin-left: 5%;
+        scale: 1.6;
+      }
+
+      div.list {
+        width: 70%;
+        margin: 0 25%;
+      }
+
+      div.list ul {
+        display: block;
+        display: flex;
+        padding: 0px;
+        list-style: none;
+        text-decoration: none;
+      }
+
+      div.list ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 0 30px;
+        /* transition: transform 0.3s; */
+      }
+
+      div.list ul li a:hover {
+        text-decoration: none;
+        padding: 0 30px;
+        /* -ms-transform: color(#f54655) scale(1.2); */
+        /* -webkit-transform: color(#f54655) scale(1.2); */
+        color: #f54655;
+        transition: 0.3s;
+      }
+
+      div.logo img{
+        height: 3vh;
+      }
+
+      /* ===================== Hamburger code ========================= */
+
+      .burger {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 10%;
+        top: 30px;
+      }
+
+      .line {
+        width: 33px;
+        background-color: white;
+        height: 4px;
+        margin: 3px 3px;
+        display: none;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 2;
+        backdrop-filter: blur(10px);
+        background-color: rgb(182, 179, 179, 0.1);
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.7s;
+      }
+
+      .sidebar ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        right: 12%;
+      }
+
+      .sidebar li {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 25px;
+      }
+
+      .sidebar a {
+        width: 100%;
+      }
+
+      /* =================== Search Box =========================  */
+
+      div.searchbox{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f4;
+      }
+
+      div.searchbox p{
+        padding: 5px;
+        color: #ff8282;
+        scale: 1.4;
+      }
+
+
+      /* ======================================================================== Section 1 ========================================================================= */
+
+      div.mainfeatures{
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        height: 125vh;
+      }
+
+      div.twofeature{
+        display: flex;
+      }
+
+      div.singlefeature {
+        margin: 2vh;
+        width: 60vh;
+        height: 100vh;
+        border: 4px solid black;
+        }
+
+        /* ====================================================================== Section 6 =========================================================================*/
+
+        .text-footer{
+          text-align: center;
+          padding: 30px 0;
+          font-family: 'Ubuntu', sans-serif;
+          display: flex;
+          justify-content: center;
+          color: white;
+        }
+
+        footer.background{
+          background-color: gray;
+        }
+
+       
+         /* <!-- ========================== Responsivity for Phone =========================== --> */
+
+          /* ========== Responsivity for Haburger and navbar */
+
+      <!-- @media only screen and (max-width: 480px) {
+        html,
+        body {
+          background-color: #ffffff;
+          /* background-color: #ffffff; */
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+        }
+
+        .firstblock {
+          width: 100%;
+          height: 30vh;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          background-image: url(bgtop.jpeg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        /* li.lines{
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          top: 20px;
+          right: 15px;
+        } */
+
+        nav li{
+          display: none;
+        }
+
+        div.line {
+          /* display: none; */
+          left: 16vh;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+        }    
+
+        div.login{
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.login button {
+            margin: 10px;
+            width: 20vh;
+            height: 5vh;
+            background-color: rgb(255, 255, 255);
+            color: #6474ff;
+            font-size: 1.02em;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        div.login button :hover{
+            margin: 10px;
+            width: 20vh;
+            height: 5vh;
+            color: rgb(255, 255, 255);
+            background-color: #6474ff;
+            font-size: 1.02em;
+            border: 2px solid black;
+            border-radius: 5px;
+            transition: 0.7s;
+        }
+
+        div.loginmodal{
+            position: absolute;
+            width: 70%;
+            height: 30vh;
+            border: 3px solid black;
+            border-radius: 6px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index:3;
+        }
+
+        div.loginmodal button{
+            /* position: absolute; */
+            width: 17vh;
+            height: 6vh;
+            border: 3px solid black;
+            border-radius: 6px;
+            background-color: rgb(255, 213, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 3vh;
+        }
+
+        div.flexloginmodal{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        /* ------------------------------- Section 0 -------------------------------------- */
+
+        /* ------------------------------- Section 1 -------------------------------------- */
+
+        div.mainfeatures{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+        }
+
+        div.singlefeature{
+            margin: 0.3vh;
+            width: 24vh;
+            height: 28vh;
+            border: 3px solid black;
+        }
+      
+        div.twofeature{
+            display: flex;
+        }
+       
+
+        /* ------------------------------- Section 2 -------------------------------------- */
+
+        section.second{
+            background-color: #e0dfdf;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.singlecommondisease{
+            margin: 2vh;
+            width: 12vh;
+            height: 15vh;
+            border: 2px solid black;
+            border-radius: 40px;
+            background-color: ghostwhite;
+        }
+
+        div.threecommondisease{
+            display: flex;
+        }
+
+        div.allcommondisease{
+            height: 80vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.h1ofsec2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* margin-top: 6vh; */
+        }
+
+        div.h1ofsec2 h1{
+            margin-top: 0vh;
+            font-size: 25px;
+            font-weight: 600;
+            filter: drop-shadow(2px 4px 6px black);
+        }
+
+        /* ----------------------------- Section 3 --------------------------------*/
+
+        section.third{
+          background-color: #d6daff;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        div.alldocvideos{
+          display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        div.singledocvideo{
+            margin: 0.3vh;
+            width: 24vh;
+            height: 45vh;
+            border: 1px solid black;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+      
+        div.twodocvideos{
+            display: flex;
+        }
+
+        video{
+          width: 22vh;
+        }
+
+        p.video{
+          width: 90%;
+        }
+       
+        /* ------------------------------ Section 4 -------------------------------- */
+
+        section.fourth{
+          height: 72vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff771;
+        }
+
+        div.slidecontainer{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        div.mySlides{
+          width: 35vh;
+          height: 55vh;
+          border: 2px solid black;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 50px;
+          font-weight: 800;
+          background-color: antiquewhite;
+        }
+
+        div.BlogsSlide{
+          height: 55vh;
+          width: 35vh;
+        }
+
+        .sliderightbutton{
+          width: 4vh;
+          height: 4vh;
+          background-color: #000000;
+          color: white;
+        }
+
+        .slideleftbutton{
+          width: 4vh;
+          height: 4vh;
+          background-color: #000000;
+          color: white;
+        }
+
+        /* ----------------------------------- Section 5 ---------------------------------------------- */
+
+        /* Styling the area of the slides */
+#slideshow {
+  overflow: hidden;
+  height: 510px;
+  width: 728px;
+  margin: 0 auto;
+}
+ 
+/* Style each of the sides 
+with a fixed width and height */
+.slide {
+  float: left;
+  height: 510px;
+  width: 728px;
+}
+ 
+/* Add animation to the slides */
+.slide-wrapper {
+   
+/* Calculate the total width on the
+  basis of number of slides */
+  width: calc(728px * 4);
+ 
+/* Specify the animation with the
+  duration and speed */
+  animation: slide 10s ease infinite;
+}
+ 
+/* Set the background color
+of each of the slides */
+.slide:nth-child(1) {
+  background: green;
+}
+ 
+.slide:nth-child(2) {
+  background: pink;
+}
+ 
+.slide:nth-child(3) {
+  background: red;
+}
+ 
+.slide:nth-child(4) {
+  background: yellow;
+}
+ 
+/* Define the animation 
+for the slideshow */
+@keyframes slide {
+   
+/* Calculate the margin-left for 
+  each of the slides */
+  20% {
+    margin-left: 0px;
+  }
+ 
+  40% {
+    margin-left: calc(-728px * 1);
+  }
+ 
+  60% {
+    margin-left: calc(-728px * 2);
+  }
+ 
+  80% {
+    margin-left: calc(-728px * 3);
+  }
+}
+      }
+
+      
+
+
+
+        /* ====================== End of Responsivity ======================== */
+
+
+    /* ============================= Navbar End ================================= */
+
+    /* ================================================================ Section 0 ================================================================ */
+
+
+
+
+      /* =========================================================== Questionarie for the user =========================================== */
+
+      #quiz-container {
+    margin-bottom: 20px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+/* end of questionarie */
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- ===========================Section 0================================= -->
+
+    <!-- <section class="zero">
+        <div class="firstblock"></div> -->
+  
+        <!-- navbar -->
+  
+        <div class="navbar">
+          <nav class="sidebar">
+            <!-- <div class="logo"><img src="logo/logo.png" alt=""></div> -->
+            <div onclick=hidesidebar()><img src="cross.png" alt=""></div>
+            <div class="list">
+              <ul id="ul">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="blogs.html">blogs</a></li>
+                <li><a href="questionarie.html">Questionarie </a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="login">
+                <!-- <button onclick=login() class="Signup">Sing-Up</button>
+                <button onclick=login() class="login">Log-In</button> -->
+                </div>
+              </ul>
+            </div>
+    
+            <!-- Hamburger -->
+    
+            <!-- <div class="burger" id="burger">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div> -->
+          </nav>
+    
+          <nav>
+            <div class="logo"><img src="logo.png" alt=""></div>
+            <div class="list">
+              <ul id="ul">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="blogs.html">blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="lines" onclick=showsidebar()><a href="#">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                </div>
+                </a>
+              </ul>
+          </nav>
+        </div>
+
+        <!-- login modal window -->
+        <!-- <div class="flexloginmodal">
+        <div class="loginmodal">
+            <div onclick=closeloginmodal() class="closeloginmodal"><img src="cross.png" alt=""></div>
+            <a href="login.html"><button>LoG-IN as Doctor</button></a>
+            <a href="login.html"><button>LoG-IN as User</button></a>
+        </div>
+        </div> -->
+  
+        <!-- search box -->
+        <div class="searchbox">
+            <p>Search about any disease below</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="search the disease">
+                <button onclick="redirect()">Search</button>
+            </div>
+        </div>
+  
+      </section>
+  
+
+
+
+      <!-- ======================================================== Questionarie fot the Paitent/User ============================================================= -->
+
+
+      
+        <div id="quiz-container">
+            <!-- Questions will be dynamically generated here -->
+        </div>
+        <button id="final-submit" onclick="calculatePercentage()">Final Submit</button>
+        <p id="result"></p>
+    
+    
+
+          <div class="day2"><a href="nextday.html">Next day</a></div>
+
+
+
+
+      <!-- ======================================================== End of the Questionarie ============================================================= -->
+
+
+      
+
+
+
+      <!-- ========================Section 1========================= -->
+
+      <section class="first">
+
+        <!-- Our main Features -->
+
+        <div class="mainfeatures">
+            <div class="twofeature">
+                <div class="singlefeature blogs"></div>
+                <div class="singlefeature imginput"></div>
+            </div>
+            <div class="twofeature">
+                <div class="singlefeature videoconf"></div>
+                <div class="singlefeature "></div>
+            </div>
+        </div>
+
+      </section>
+
+      <!-- =========================Section 2=========================== -->
+
+      <section class="second">
+        <div class="h1ofsec2">
+        <h1>Some Very Common Diorders</h1>
+        </div>
+        <div class="allcommondisease">
+            <div class="threecommondisease">
+                <div class="singlecommondisease"></div>
+                <div class="singlecommondisease"></div>
+                <div class="singlecommondisease"></div>
+            </div>
+            <div class="threecommondisease">
+                <div class="singlecommondisease"></div>
+                <div class="singlecommondisease"></div>
+                <div class="singlecommondisease"></div>
+            </div>
+            <div class="threecommondisease">
+                <div class="singlecommondisease"></div>
+                <div class="singlecommondisease"></div>
+                <div class="singlecommondisease"></div>
+            </div>
+            <div class="threecommondisease">
+                <div class="singlecommondisease"></div>
+                <div class="singlecommondisease"></div>
+                <div class="singlecommondisease"></div>
+            </div>
+        </div>
+      </section>
+
+      <!-- ==============================Section 3========================== -->
+
+      <section class="third">
+
+      <div class="alldocvideos">
+        <div class="twodocvideos">
+            <div class="singledocvideo"><video src="doc1.mp4" controls="controls"></video><p class="video">doctor saying something blah blah one two three mic test doctor saying something blah blah one two three mic test</p></div>
+            <div class="singledocvideo"><video src="doc2.mp4" controls="controls"></video><p class="video">doctor saying something blah blah one two three mic test doctor saying something blah blah one two three mic test</p></div>
+        </div>
+        <div class="twodocvideos">
+            <div class="singledocvideo"><video src="doc3.mp4" controls="controls"></video><p class="video">doctor saying something blah blah one two three mic test doctor saying something blah blah one two three mic test</p></div>
+            <div class="singledocvideo"><video src="doc4.mp4" controls="controls"></video><p class="video">doctor saying something blah blah one two three mic test doctor saying something blah blah one two three mic test</p></div>
+        </div>
+      </div>
+
+      </section>
+
+      <!-- =============================Section 4============================= -->
+
+      <section class="fourth">
+
+      <h2 class="w3-center">Blogs by User</h2>
+
+      <div class="slidecontainer">
+      
+      <button class="slideleftbutton" onclick="plusDivs(-1)">&#10094;</button>
+
+      <div class="BlogsSlide">
+        <div class="mySlides">Blog 1</div>
+        <div class="mySlides">Blog 2</div>
+        <div class="mySlides">Blog 3</div>
+        <div class="mySlides">Blog 4</div>
+      </div>
+
+        <button class="sliderightbutton" onclick="plusDivs(1)">&#10095;</button>
+
+        </div>
+      </section>
+
+      <!-- =================================Section 5 ============================== -->
+
+      <section class="fifth">
+        <div id="slideshow">
+          <div class="slide-wrapper">
+               
+          <!-- Define each of the slides
+           and write the content -->
+            
+              <div class="slide">
+                  <h1 class="slide-number">
+                      GeeksforGeeks
+                  </h1> 
+              </div>
+              <div class="slide">
+                  <h1 class="slide-number">
+                      A computer science portal
+                  </h1> 
+              </div>
+              <div class="slide">
+                  <h1 class="slide-number">
+                      This is an example of
+                  </h1> 
+              </div>
+              <div class="slide">
+                  <h1 class="slide-number">
+                      Slideshow with HTML and CSS only
+                  </h1> 
+              </div>
+          </div>
+      </div>
+      </section>
+
+      <!-- ===================================Section 6================================= -->
+
+      <footer class="background">
+        <p class="text-footer">
+          Copyright &copy; 2027 www.IUedu.com - All rights reserved (made by the greatest person alive in the world-- shri shri shri AAYUSH NIKAM)
+      </p>
+      </footer>
+
+      <!-- log out -->
+
+      <button type="button" id="signoutbutton">sign out</button>
+      <h2 id="msg"></h2>
+      <h2 id="greet"></h2>
+    <script src="script.js">
+
+      
+    </script>
+
+    <script>
+      let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+      let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+
+      let MsgHead = document.getElementById('msg');
+      let GreetHead = document.getElementById('greet');
+      let SignoutBtn = document.getElementById('signoutbutton');
+
+     
+
+      let Signout = ()=>{
+        sessionStorage.removeItem("user-cred");
+        sessionStorage.remove.Item("user-info");
+        window.location.href = 'login.html'
+      }
+
+      let CheckCred = ()=>{
+        if(!sessionStorage.getItem("user-creds"))
+          window.location.href = 'login.html'
+        else{
+          MsgHead.innerText = `user with email "${UserCreds.email}" logged in`;
+      GreetHead.innerHTML = `Welcome ${UserInfo.firstname + " " + UserInfo.lastname}!`;
+        }
+      }
+
+      window.addEventListener('load', CheckCred);
+      SignoutBtn.addEventListener('click', Signout);
+    </script>
+</body>
+</html>
