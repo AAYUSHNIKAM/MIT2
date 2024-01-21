@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Daily Lifestyle Questionnaire</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.questionnaire-section {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.time-frame {
+    margin-bottom: 10px;
+}
+
+.question {
+    float: left;
+    width: 50%;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-left: 10px;
+}
+
+button {
+    display: block;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+
+    <div id="quiz-container">
+        <div class="questionnaire-section">
+            <div class="time-frame">05am to 09am</div>
+            <div class="question">
+                <p>1. At what time did you wake up today?</p>
+                <label><input type="radio" name="q1" value="0"> a) Before 05:00 am (40 points)</label>
+                <label><input type="radio" name="q1" value="1"> b) 05:00 am to 07:00 am (30 points)</label>
+                <label><input type="radio" name="q1" value="2"> c) 07:00 am to 09:00 am (20 points)</label>
+                <label><input type="radio" name="q1" value="3"> d) After 09:00 am (10 points)</label>
+                
+                <p>2. How many hours of sleep did you get last night?</p>
+                <label><input type="radio" name="q2" value="0"> a) Less than 6 hours (40 points)</label>
+                <label><input type="radio" name="q2" value="1"> b) 6-8 hours (30 points)</label>
+                <label><input type="radio" name="q2" value="2"> c) 8-10 hours (20 points)</label>
+                <label><input type="radio" name="q2" value="3"> d) More than 10 hours (10 points)</label>
+
+                <p>3. Did you engage in intentional physical activity today?</p>
+                <label><input type="radio" name="q3" value="0"> a) Yes, vigorous exercise (40 points)</label>
+                <label><input type="radio" name="q3" value="1"> b) Yes, moderate exercise (30 points)</label>
+                <label><input type="radio" name="q3" value="2"> c) Yes, light exercise (20 points)</label>
+                <label><input type="radio" name="q3" value="3"> d) No exercise (10 points)</label>
+
+                <p>4. At what time did you have your breakfast today?</p>
+                <label><input type="radio" name="q4" value="0"> a) Before 07:00 am (40 points)</label>
+                <label><input type="radio" name="q4" value="1"> b) 07:00 am - 08:00 am (30 points)</label>
+                <label><input type="radio" name="q4" value="2"> c) 08:00 am - 09:00 am (20 points)</label>
+                <label><input type="radio" name="q4" value="3"> d) After 09:00 am (10 points)</label>
+
+                <p>5. How would you describe your breakfast today?</p>
+                <label><input type="radio" name="q5" value="0"> a) Healthy and balanced (40 points)</label>
+                <label><input type="radio" name="q5" value="1"> b) Mostly healthy with some indulgences (30 points)</label>
+                <label><input type="radio" name="q5" value="2"> c) Inconsistent, could be better (20 points)</label>
+                <label><input type="radio" name="q5" value="3"> d) Poor, need improvement (10 points)</label>
+            </div>
+        </div>
+
+        <div class="questionnaire-section">
+            <div class="time-frame">09:00 am to 02:00 pm</div>
+            <div class="question">
+                <p>1. How much time did you spend outdoors in natural sunlight today?</p>
+                <label><input type="radio" name="q6" value="0"> a) Less than 15 minutes (40 points)</label>
+                <label><input type="radio" name="q6" value="1"> b) 15-30 minutes (30 points)</label>
+                <label><input type="radio" name="q6" value="2"> c) 30 minutes to 1 hour (20 points)</label>
+                <label><input type="radio" name="q6" value="3"> d) More than 1 hour (10 points)</label>
+
+                <p>2. Did you have meaningful social interactions today?</p>
+                <label><input type="radio" name="q7" value="0"> a) Yes, in person (40 points)</label>
+                <label><input type="radio" name="q7" value="1"> b) Yes, virtual/online (30 points)</label>
+                <label><input type="radio" name="q7" value="2"> c) Minimal social interaction (20 points)</label>
+                <label><input type="radio" name="q7" value="3"> d) No social interaction (10 points)</label>
+
+                <!-- Add more questions for this time frame -->
+            </div>
+        </div>
+
+        <!-- Add questionnaire sections for the remaining time frames -->
+    </div>
+
+    <button id="final-submit" onclick="calculateScore()">Final Submit</button>
+
+    <script>
+        // Sample questions data
+const questions = [
+    // Questions for the first time frame (05am to 09am)
+    { 
+        question: "At what time did you wake up today?",
+        options: ["Before 05:00 am", "05:00 am to 07:00 am", "07:00 am to 09:00 am", "After 09:00 am"],
+        points: [40, 30, 20, 10],
+        selectedOption: null
+    },
+    {
+        question: "How many hours of sleep did you get last night?",
+        options: ["Less than 6 hours", "6-8 hours", "8-10 hours", "More than 10 hours"],
+        points: [40, 30, 20, 10],
+        selectedOption: null
+    },
+    {
+        question: "Did you engage in intentional physical activity today?",
+        options: ["Yes, vigorous exercise", "Yes, moderate exercise", "Yes, light exercise", "No exercise"],
+        points: [40, 30, 20, 10],
+        selectedOption: null
+    },
+    {
+        question: "At what time did you have your breakfast today?",
+        options: ["Before 07:00 am", "07:00 am - 08:00 am", "08:00 am - 09:00 am", "After 09:00 am"],
+        points: [40, 30, 20, 10],
+        selectedOption: null
+    },
+    {
+        question: "How would you describe your breakfast today?",
+        options: ["Healthy and balanced", "Mostly healthy with some indulgences", "Inconsistent, could be better", "Poor, need improvement"],
+        points: [40, 30, 20, 10],
+        selectedOption: null
+    },
+
+    // Questions for the second time frame (09:00 am to 02:00 pm)
+    {
+        question: "How much time did you spend outdoors in natural sunlight today?",
+        options: ["Less than 15 minutes", "15-30 minutes", "30 minutes to 1 hour", "More than 1 hour"],
+        points: [40, 30, 20, 10],
+        selectedOption: null
+    },
+    {
+        question: "Did you have meaningful social interactions today?",
+        options: ["Yes, in person", "Yes, virtual/online", "Minimal social interaction", "No social interaction"],
+        points: [40, 30, 20, 10],
+        selectedOption: null
+    },
+    // Add more questions for this time frame
+
+    // Questions for the third time frame (02:00 pm to 06:00 pm)
+    // ...
+
+    // Questions for the fourth time frame (06:00 pm to 11:00 pm)
+    // ...
+];
+
+// Initialize question container
+const quizContainer = document.getElementById('quiz-container');
+
+// Display questions
+questions.forEach((q, index) => {
+    const questionElement = document.createElement('div');
+    questionElement.className = 'question';
+
+    // Display question
+    questionElement.innerHTML = `<p>${q.question}</p>`;
+
+    // Display options
+    q.options.forEach((option, optionIndex) => {
+        const optionElement = document.createElement('input');
+        optionElement.type = 'radio';
+        optionElement.name = `question${index}`;
+        optionElement.value = optionIndex;
+        optionElement.addEventListener('change', () => selectOption(index, optionIndex));
+
+        const labelElement = document.createElement('label');
+        labelElement.innerHTML = `${option} (${q.points[optionIndex]} points)`;
+
+        questionElement.appendChild(optionElement);
+        questionElement.appendChild(labelElement);
+    });
+
+    quizContainer.appendChild(questionElement);
+});
+
+// Function to handle option selection
+function selectOption(questionIndex, optionIndex) {
+    questions[questionIndex].selectedOption = optionIndex;
+}
+
+// Function to calculate and display score
+function calculateScore() {
+    let totalScore = 0;
+
+    // Check if all questions are answered
+    const allQuestionsAnswered = questions.every(q => q.selectedOption !== null);
+
+    if (!allQuestionsAnswered) {
+        alert('Please answer all questions before submitting.');
+        return;
+    }
+
+    // Calculate total score
+    questions.forEach(q => {
+        totalScore += q.points[q.selectedOption];
+    });
+
+    // Display total score
+    alert(`Your total score is: ${totalScore}`);
+}
+
+    </script>
+</body>
+</html>

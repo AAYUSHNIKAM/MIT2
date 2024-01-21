@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Information</title>
+    <style>
+        body {
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .firstblock {
+        width: 100%;
+        height: 61vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-image: url(bgtop.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      /* navbar */
+
+      * {
+        margin: 0;
+        padding: 0;
+        color: #000000;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      a {
+        cursor: pointer;
+        text-decoration: none;
+      }
+      div.nav {
+        /* display: flex; */
+      }
+
+      nav {
+        font-size: 1.25em;
+        background-color: #000ea0;
+        display: flex;
+        padding: 30px;
+      }
+
+      span {
+        color: #f54655;
+      }
+
+      div.logo {
+        width: 30%;
+        margin-left: 5%;
+        scale: 1.6;
+      }
+
+      div.list {
+        width: 70%;
+        margin: 0 25%;
+      }
+
+      div.list ul {
+        display: block;
+        display: flex;
+        padding: 0px;
+        list-style: none;
+        text-decoration: none;
+      }
+
+      div.list ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 0 30px;
+        /* transition: transform 0.3s; */
+      }
+
+      div.list ul li a:hover {
+        text-decoration: none;
+        padding: 0 30px;
+        /* -ms-transform: color(#f54655) scale(1.2); */
+        /* -webkit-transform: color(#f54655) scale(1.2); */
+        color: #f54655;
+        transition: 0.3s;
+      }
+
+      div.logo img{
+        height: 3vh;
+      }
+
+      /* ===================== Hamburger code ========================= */
+
+      .burger {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 10%;
+        top: 30px;
+      }
+
+      .line {
+        width: 33px;
+        background-color: white;
+        height: 4px;
+        margin: 3px 3px;
+        display: none;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 2;
+        backdrop-filter: blur(10px);
+        background-color: rgb(182, 179, 179, 0.1);
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.7s;
+      }
+
+      .sidebar ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        right: 12%;
+      }
+
+      .sidebar li {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 25px;
+      }
+
+      .sidebar a {
+        width: 100%;
+      }
+
+      /* =================== Search Box =========================  */
+
+      div.searchbox{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f4;
+      }
+
+      div.searchbox p{
+        padding: 5px;
+        color: #ff8282;
+        scale: 1.4;
+      }
+
+
+      /* ======================================================================== Section 1 ========================================================================= */
+
+      div.mainfeatures{
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        height: 125vh;
+      }
+
+      div.twofeature{
+        display: flex;
+      }
+
+      div.singlefeature {
+        margin: 2vh;
+        width: 60vh;
+        height: 100vh;
+        border: 4px solid black;
+        }
+       
+         /* <!-- ========================== Responsivity for Phone =========================== --> */
+
+          /* ========== Responsivity for Haburger and navbar */
+
+      <!-- @media only screen and (max-width: 480px) {
+        html,
+        body {
+          background-color: #ffffff;
+          /* background-color: #ffffff; */
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+        }
+
+        .firstblock {
+          width: 100%;
+          height: 30vh;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          background-image: url(bgtop.jpeg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        /* li.lines{
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          top: 20px;
+          right: 15px;
+        } */
+
+        nav li{
+          display: none;
+        }
+
+        div.line {
+          /* display: none; */
+          left: 16vh;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+        }    
+
+        div.login{
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.login button {
+            margin: 10px;
+            width: 20vh;
+            height: 5vh;
+            background-color: rgb(255, 255, 255);
+            color: #6474ff;
+            font-size: 1.02em;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        div.login button :hover{
+            margin: 10px;
+            width: 20vh;
+            height: 5vh;
+            color: rgb(255, 255, 255);
+            background-color: #6474ff;
+            font-size: 1.02em;
+            border: 2px solid black;
+            border-radius: 5px;
+            transition: 0.7s;
+        }
+
+        div.loginmodal{
+            position: absolute;
+            width: 70%;
+            height: 30vh;
+            border: 3px solid black;
+            border-radius: 6px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index:3;
+        }
+
+        div.loginmodal button{
+            /* position: absolute; */
+            width: 17vh;
+            height: 6vh;
+            border: 3px solid black;
+            border-radius: 6px;
+            background-color: rgb(255, 213, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 3vh;
+        }
+
+        div.flexloginmodal{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        /* ------------------------------- Section 0 -------------------------------------- */
+
+        /* ------------------------------- Section 1 -------------------------------------- */
+
+        div.mainfeatures{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 44vh;
+        }
+
+        div.singlefeature{
+            margin: 2vh;
+            width: 15vh;
+            height: 15vh;
+            border: 4px solid black;
+        }
+      
+        div.twofeature{
+            display: flex;
+        }
+       
+
+        /* ------------------------------- Section 2 -------------------------------------- */
+
+        section.second{
+            background-color: #e0dfdf;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.singlecommondisease{
+            margin: 2vh;
+            width: 10vh;
+            height: 15vh;
+            border: 2px solid black;
+            border-radius: 40px;
+            background-color: ghostwhite;
+        }
+
+        div.threecommondisease{
+            display: flex;
+        }
+
+        div.allcommondisease{
+            height: 80vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.h1ofsec2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* margin-top: 6vh; */
+        }
+
+        div.h1ofsec2 h1{
+            margin-top: 4vh;
+        }
+
+        /* ----------------------------- Section 3 --------------------------------*/
+
+        section.third{
+          background-color: #d6daff;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        div.alldocvideos{
+          display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        div.singledocvideo{
+            margin: 1vh;
+            width: 19vh;
+            height: 45vh;
+            border: 1px solid black;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+      
+        div.twodocvideos{
+            display: flex;
+        }
+
+        video{
+          width: 17vh;
+        }
+
+        p.video{
+          width: 70%;
+        }
+       
+        /* ------------------------------ Section 4 -------------------------------- */
+
+        section.fourth{
+          height: 72vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff771;
+        }
+
+        div.slidecontainer{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        div.mySlides{
+          width: 35vh;
+          height: 55vh;
+          border: 2px solid black;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 50px;
+          font-weight: 800;
+          background-color: antiquewhite;
+        }
+
+        div.BlogsSlide{
+          height: 55vh;
+          width: 35vh;
+        }
+
+        .sliderightbutton{
+          width: 4vh;
+          height: 4vh;
+          background-color: #000000;
+          color: white;
+        }
+
+        .slideleftbutton{
+          width: 4vh;
+          height: 4vh;
+          background-color: #000000;
+          color: white;
+        }
+      }
+
+
+      .centreall{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+
+
+
+        /* ====================== End of Responsivity ======================== */
+
+
+    /* ============================= Navbar End ================================= */
+
+    /* ================================================================ Section 0 ================================================================ */
+
+
+        .info-box {
+            margin-top: 2vh;
+            width: 80%;
+            /* max-width: 600px; */
+            border: 4px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .disease-image {
+            /* max-width: 100%; */
+            border-radius: 10px;
+            width: 820px;
+            height: 530px;
+            margin-bottom: 10px;
+        }
+
+        .disease-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .harmfull {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: green;
+        }
+      
+        .disease-details {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            /* .info-box {
+                width: 95%;
+            } */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <nav class="sidebar">
+          <!-- <div class="logo"><img src="logo/logo.png" alt=""></div> -->
+          <div onclick=hidesidebar()><img src="cross.png" alt=""></div>
+          <div class="list">
+            <ul id="ul">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="skills.html">Skills</a></li>
+              <li><a href="blogs.html">blogs</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <div class="login">
+              <button onclick=login() class="Signup">Sing-Up</button>
+              <button onclick=login() class="login">Log-In</button>
+              </div>
+            </ul>
+          </div>
+  
+          <!-- Hamburger -->
+  
+          <!-- <div class="burger" id="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div> -->
+        </nav>
+  
+        <nav>
+          <div class="logo"><img src="logo.png" alt=""></div>
+          <div class="list">
+            <ul id="ul">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="skills.html">Skills</a></li>
+              <li><a href="blogs.html">blogs</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <div class="lines" onclick=showsidebar()><a href="#">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </div>
+              </a>
+            </ul>
+        </nav>
+      </div>
+
+      <!-- login modal window -->
+      <div class="flexloginmodal">
+      <div class="loginmodal">
+          <div onclick=closeloginmodal() class="closeloginmodal"><img src="cross.png" alt=""></div>
+          <a href="login.html"><button>LoG-IN as Doctor</button></a>
+          <a href="login.html"><button>LoG-IN as User</button></a>
+      </div>
+      </div>
+
+      <!-- search box -->
+      <div class="searchbox">
+          <p>Search about any disease below</p>
+          <div class="search-container">
+              <input type="text" id="searchInput" placeholder="search the disease">
+              <button onclick="redirect()">Search</button>
+          </div>
+      </div>
+
+      <div class="centreall">
+<div class="info-box">
+    <img class="disease-image" src="pimple.jpeg" alt="Disease Image">
+    <div class="disease-name">Pimple</div>
+  <div class="harmfull">
+     Not Harmfull, very common, could be solved using few homeremidies
+  </div>
+  
+    <div class="disease-details">
+        is the time between infection and the ability of the disease to spread to another person, which may precede, follow, or be simultaneous with the appearance of symptoms. Some viruses also exhibit a dormant phase, called viral latency, in which the virus hides in the body in an inactive state. For example, varicella zoster virus causes chickenpox in the acute phase; after recovery from chickenpox, the virus may remain dormant in nerve cells for many years, and later cause herpes zoster (shingles).
+
+Acute disease
+An acute disease is a short-lived disease, like the common cold.
+Chronic disease
+A chronic disease is one that lasts for a long time, usually at least six months. During that time, it may be constantly present, or it may go into remission and periodically relapse. A chronic disease may be stable (does not get any worse) or it may be progressive (gets worse over time). Some chronic diseases can be permanently cured. Most chronic diseases can be beneficially treated, even if they cannot be permanently cured.
+Clinical disease
+One that has clinical consequences; in other words, the stage of the disease that produces the characteristic signs and symptoms of that disease.[20] AIDS is the clinical disease stage of HIV infection.
+Cure
+A cure is the end of a medical condition or a treatment that is very likely to end it, while remission refers to the disappearance, possibly temporarily, of symptoms. Complete remission is the best possible outcome for incurable diseases.
+Flare-up
+"Flareup" redirects here. For the Transformers character, see Flareup (Transformers).
+See also: Exacerbation
+A flare-up can refer to either the recurrence of symptoms or an onset of more severe symptoms.[21]
+Progressive disease
+Progressive disease is a disease whose typical natural course is the worsening of the disease until death, serious debility, or organ failure occurs. Slowly progressive diseases are also chronic diseases; many are also degenerative diseases. The opposite of progressive disease is stable disease or static disease: a medical condition that exists, but does not get better or worse.
+Refractory disease
+A refractory disease is a disease that resists treatment, especially an individual case that resists treatment more than is normal for the specific disease in question.
+Subclinical disease
+Also called silent disease, silent stage, or asymptomatic disease. This is a stage in some diseases before the symptoms are first noted.[22]
+Terminal phase
+If a person will die soon from a disease, regardless of whether that disease typically causes death, then the stage between the earlier disease process and active dying is the terminal phase.
+    </div>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

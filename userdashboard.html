@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+    <style>
+
+    /* ================================================================ Section 0 ================================================================ */
+
+    /* ============================= Navbar ================================= */
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        width: 100%;
+      }
+
+      *{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+
+      .firstblock {
+        width: 100%;
+        height: 61vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-image: url(bgtop.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      /* navbar */
+
+      * {
+        margin: 0;
+        padding: 0;
+        color: #000000;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      a {
+        cursor: pointer;
+        text-decoration: none;
+      }
+      div.nav {
+        /* display: flex; */
+      }
+
+      nav {
+        font-size: 1.25em;
+        background-color: #000ea0;
+        display: flex;
+        padding: 30px;
+      }
+
+      span {
+        color: #f54655;
+      }
+
+      div.logo {
+        width: 30%;
+        margin-left: 5%;
+        scale: 1.6;
+      }
+
+      div.list {
+        width: 70%;
+        margin: 0 25%;
+      }
+
+      div.list ul {
+        display: block;
+        display: flex;
+        padding: 0px;
+        list-style: none;
+        text-decoration: none;
+        right: 5vh;
+      }
+
+      div.list ul li a {
+        text-decoration: none;
+        color: rgb(81, 0, 255);
+        padding: 0 30px;
+        /* transition: transform 0.3s; */
+      }
+      div.list ul li a:hover {
+        text-decoration: none;
+        padding: 0 30px;
+        /* -ms-transform: color(#f54655) scale(1.2); */
+        /* -webkit-transform: color(#f54655) scale(1.2); */
+        color: #f54655;
+        transition: 0.3s;
+      }
+
+      div.logo img{
+        height: 3vh;
+      }
+
+      /* ===================== Hamburger code ========================= */
+
+      .burger {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 10%;
+        top: 30px;
+      }
+
+      .line {
+        width: 33px;
+        background-color: white;
+        height: 4px;
+        margin: 3px 3px;
+        display: none;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 2;
+        backdrop-filter: blur(10px);
+        background-color: rgb(182, 179, 179, 0.1);
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.7s;
+      }
+
+      .sidebar ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        right: 12%;
+      }
+
+      .sidebar li {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 25px;
+      }
+
+      .sidebar a {
+        width: 100%;
+      }
+
+      /* =================== Search Box =========================  */
+
+      div.searchbox{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f4;
+      }
+
+      div.searchbox p{
+        padding: 5px;
+        color: #ff8282;
+        scale: 1.4;
+      }
+
+
+      /* ======================================================================== Section 1 ========================================================================= */
+
+      div.headingsec1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      div.headingsec1 h1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+      }
+
+      div.headingsec1 h5{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        right: 1.5vh;
+        position: relative;
+      }
+
+      div.mainfeatures{
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        height: 125vh;
+      }
+
+      div.twofeature{
+        display: flex;
+      }
+
+      div.singlefeature {
+        margin: 2vh;
+        width: 60vh;
+        height: 100vh;
+        border: 4px solid black;
+        }
+
+        /* ====================================================================== Section 6 =========================================================================*/
+
+        .text-footer{
+          text-align: center;
+          padding: 30px 0;
+          font-family: 'Ubuntu', sans-serif;
+          display: flex;
+          justify-content: center;
+          color: white;
+        }
+
+        footer.background{
+          background-color: gray;
+        }
+
+       
+         /* <!-- ========================== Responsivity for Phone =========================== --> */
+
+          /* ========== Responsivity for Haburger and navbar */
+
+      <!-- @media only screen and (max-width: 480px) {
+        html,
+        body {
+          background-color: #ffffff;
+          /* background-color: #ffffff; */
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+        }
+
+        .firstblock {
+          width: 100%;
+          height: 30vh;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          background-image: url(bgtop.jpeg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        /* li.lines{
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          top: 20px;
+          right: 15px;
+        } */
+
+        div.headingnotebook{
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.headingnotebook h5{
+            padding: 0px;
+            top: -15px;
+            position: relative;
+        }
+
+        div.headingnotebook h1{
+            padding: 0px;
+        }
+
+        div.notebook{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        a div.notebook img{
+            width: 95%;
+            border: 2px solid black;
+            border-radius: 25px;
+            box-shadow: 0px 0px 10px 0px black;
+        }
+
+        nav li{
+          display: none;
+        }
+
+        div.line {
+          /* display: none; */
+          left: 16vh;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+        }    
+
+        div.login{
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.login button {
+            margin: 10px;
+            width: 20vh;
+            height: 5vh;
+            background-color: rgb(255, 255, 255);
+            color: #6474ff;
+            font-size: 1.02em;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        div.login button :hover{
+            margin: 10px;
+            width: 20vh;
+            height: 5vh;
+            color: rgb(255, 255, 255);
+            background-color: #6474ff;
+            font-size: 1.02em;
+            border: 2px solid black;
+            border-radius: 5px;
+            transition: 0.7s;
+        }
+
+        div.loginmodal{
+            position: absolute;
+            width: 70%;
+            height: 30vh;
+            border: 3px solid black;
+            border-radius: 6px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index:3;
+        }
+
+        div.loginmodal button{
+            /* position: absolute; */
+            width: 17vh;
+            height: 6vh;
+            border: 3px solid black;
+            border-radius: 6px;
+            background-color: rgb(255, 213, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 3vh;
+        }
+
+        div.flexloginmodal{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        /* ------------------------------- Section 0 -------------------------------------- */
+
+        
+        h2#greet{
+          background-color: #000ea0;
+          color: white;
+          margin: 0;
+          font-size: 45px;
+          font-weight: 700;
+        }
+
+        h2#msg{
+          display: none;
+        }
+
+        button#signoutbutton{
+          display: none;
+        }
+
+        /* ------------------------------- Section 1 -------------------------------------- */
+
+        div.mainfeatures{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        div.singlefeature{
+            margin: 0.3vh;
+            width: 23vh;
+            height: 35vh;
+            border: 3px solid black;
+            background-color: ivory;
+        }
+      
+        div.twofeature{
+            display: flex;
+        }
+       
+        div.videoconf img{
+          width: 70%;
+          margin-top: 1vh;
+        }
+
+        div.videoconf {
+          background-color: ivory;
+        }
+
+        /* button{
+          background: violet;
+        } */
+
+        div.singlefeature :hover{
+          background: rgb(255, 179, 255);
+          transition: 0.7s;
+        }
+
+        div.videoconf h3{
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        div.textdoc img{
+          width: 70%;
+          margin-top: 1vh;
+        }
+
+        div.textdoc {
+          background-color: ivory;
+        }
+
+        /* button{
+          background: violet;
+        } */
+
+        div.singlefeature :hover{
+          background: rgb(255, 179, 255);
+          transition: 0.7s;
+        }
+
+        div.textdoc h3{
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        div.tracking img{
+          width: 65%;
+          margin-top: 1vh;
+        }
+
+        div.tracking {
+          background-color: ivory;
+        }
+
+        div.tracking :hover{
+    background-color: #e0e01e;
+}
+        /* button{
+          background: violet;
+        } */
+
+        div.singlefeature :hover{
+          background: rgb(255, 179, 255);
+          transition: 0.7s;
+        }
+
+        div.tracking h3{
+          width: 90%;
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        div.scan img{
+          width: 45%;
+          margin-top: 1vh;
+        }
+
+        div.scan {
+          background-color: ivory;
+        }
+
+        /* button{
+          background: violet;
+        } */
+
+        div.singlefeature :hover{
+          background: rgb(255, 179, 255);
+          transition: 0.7s;
+        }
+
+        div.scan h3{
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        div.scan p{
+          width: 90%;
+        }
+
+        div.call{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          /* margin: 0 10px; */
+          height: 20vh;
+        }
+
+        p.call{
+    bottom: 3vh;
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+        }
+
+        button.call h2{
+          font-size: 29px;
+    font-weight: 700;
+        }
+        /* ------------------------------- Section 2 -------------------------------------- */
+
+        section.second{
+            background-color: #e0dfdf;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('sec2/background/bg1/green2\ \(3\).jpg');
+            background-repeat: repeat;
+        }
+
+        div.singlecommondisease{
+            margin: 2vh;
+            width: 11vh;
+            height: 15vh;
+            border: 2px solid black;
+            border-radius: 40px;
+            background-color: ghostwhite;
+        }
+
+        div.threecommondisease{
+            display: flex;
+        }
+
+        div.allcommondisease{
+            height: 80vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* all common diseases */
+
+        /* div.singlediseaseplusname{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        } */
+
+        /* a.acne {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        } */
+
+        div.acne img{
+            width: 120%;
+            right: 1.1vh;
+            position: relative;
+            top: 1vh;
+        }
+
+        p.acne {
+          left: 3.5vh;
+          width: 90%;
+          position: relative;
+          font-size: 1.3em;
+          font-weight: 600;
+        }
+
+        div.asthama img{
+            width: 120%;
+            right: 1.1vh;
+            position: relative;
+            top: 1vh;
+        }
+
+        p.asthama {
+          left: 4.5vh;
+          width: 90%;
+          position: relative;
+          font-size: 1.3em;
+          font-weight: 600;
+        }
+
+        div.arthritis img{
+            width: 120%;
+            right: 1.1vh;
+            position: relative;
+            top: 3vh;
+        }
+
+        p.arthritis {
+          left: 4vh;
+          width: 90%;
+          position: relative;
+          font-size: 1.3em;
+          font-weight: 600;
+        }
+
+        p.pimple {
+          left: 3.6vh;
+          width: 90%;
+          position: relative;
+          font-size: 1.3em;
+          font-weight: 600;
+        }
+
+        div.pimple img{
+            width: 131%;
+            right: 2.1vh;
+            position: relative;
+            top: 1vh;
+        }
+
+        p.dandruff {
+          left: 2.7vh;
+          width: 90%;
+          position: relative;
+          font-size: 1.3em;
+          font-weight: 600;
+        }
+
+        div.dandruff img{
+            width: 131%;
+            right: 1.7vh;
+            position: relative;
+            top: 1vh;
+        }
+
+        p.headache {
+          left: 1.8vh;
+          width: 90%;
+          position: relative;
+          font-size: 1.3em;
+          font-weight: 600;
+        }
+
+        div.headache img{
+            width: 100%;
+            right: 0.1vh;
+            position: relative;
+            top: 2vh;
+        }
+
+        p.cold {
+          left: 5vh;
+          width: 90%;
+          position: relative;
+          font-size: 1.3em;
+          font-weight: 600;
+        }
+
+        div.cold img{
+            width: 110%;
+            right: 0.5vh;
+            position: relative;
+            top: 1vh;
+        }
+
+        p.stomachache {
+          left: 3.2vh;
+          width: 90%;
+          position: relative;
+          font-size: 1.3em;
+          font-weight: 600;
+        }
+
+        div.stomachache img{
+            width: 110%;
+            right: 0.5vh;
+            position: relative;
+            top: 1vh;
+        }
+
+        p.fever {
+          left: 4.5vh;
+          width: 90%;
+          position: relative;
+          font-size: 1.3em;
+          font-weight: 600;
+        }
+
+        div.fever img{
+            width: 110%;
+            right: 0.5vh;
+            position: relative;
+            top: 1vh;
+        }
+
+
+        /* end of images  */
+
+        div.h1ofsec2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: -3vh 0vh;
+        }
+
+        div.h1ofsec2 h1{
+            margin-top: 0vh;
+            font-size: 25px;
+            font-weight: 600;
+            filter: drop-shadow(2px 4px 6px black);
+        }
+
+        .belowsec2 {
+            position: relative;
+            font-size: 18px;
+            font-weight: 800;
+            left: 2vh;
+        }
+
+        /* ----------------------------- Section 3 --------------------------------*/
+
+        div.docheading{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            margin: 20px;
+        }
+
+        section.third{
+          background-color: #d6daff;
+          height: 113vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        div.alldocvideos{
+          display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        div.singledocvideo{
+            margin: 0.3vh;
+            width: 21vh;
+            height: 45vh;
+            border: 1px solid black;
+            background-color: #e7ffe0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+      
+        div.twodocvideos{
+            display: flex;
+        }
+
+        video{
+          width: 19vh;
+        }
+
+        p.video{
+          width: 90%;
+        }
+       
+        /* ------------------------------ Section 4 -------------------------------- */
+
+        section.fourth{
+          height: 80vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: #e3fffb;
+        }
+
+        .blogsheading {
+            width: 95%;
+            color: blue;
+            font-weight: 500;
+        }
+
+        div.slidecontainer{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        div.mySlides{
+          width: 35vh;
+          height: 55vh;
+          border: 2px solid black;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 50px;
+          font-weight: 800;
+          background-color: rgb(255, 255, 255);
+        }
+
+        
+        div.mySlides img{
+            width: 95%;
+        }
+
+        div.BlogsSlide{
+          height: 55vh;
+          width: 35vh;
+        }
+
+        .sliderightbutton{
+          width: 4vh;
+          height: 4vh;
+          background-color: #000000;
+          color: white;
+        }
+
+        .slideleftbutton{
+          width: 4vh;
+          height: 4vh;
+          background-color: #000000;
+          color: white;
+        }
+
+        div.inbtwadd img{
+            width: 100%;
+
+        }
+
+        /* ----------------------------------- Section 5 ---------------------------------------------- */
+
+        /* Styling the area of the slides */
+
+        section.fifth{
+            height: 70vh;
+        }
+
+#slideshow {
+  overflow: hidden;
+  height: 510px;
+  width: 728px;
+  margin: 0 auto;
+  left: 3vh;
+  position: relative;
+}
+
+h1.slide-number img{
+    box-shadow: 0px 0px 5px 0px black;
+}
+ 
+/* Style each of the sides 
+with a fixed width and height */
+.slide {
+  float: left;
+  height: 510px;
+  width: 728px;
+}
+ 
+/* Add animation to the slides */
+.slide-wrapper {
+   
+/* Calculate the total width on the
+  basis of number of slides */
+  width: calc(728px * 4);
+ 
+/* Specify the animation with the
+  duration and speed */
+  animation: slide 20s ease infinite;
+}
+ 
+/* Set the background color
+of each of the slides */
+.slide:nth-child(1) {
+  background: rgb(255, 255, 255);
+}
+ 
+.slide:nth-child(2) {
+  background: rgb(255, 255, 255);
+}
+ x
+.slide:nth-child(3) {
+  background: rgb(255, 255, 255);
+}
+ 
+.slide:nth-child(4) {
+  background: rgb(255, 255, 255);
+}
+ 
+/* Define the animation 
+for the slideshow */
+@keyframes slide {
+   
+/* Calculate the margin-left for 
+  each of the slides */
+  20% {
+    margin-left: 0px;
+  }
+ 
+  40% {
+    margin-left: calc(-728px * 1);
+  }
+ 
+  60% {
+    margin-left: calc(-728px * 2);
+  }
+ 
+  80% {
+    margin-left: calc(-728px * 3);
+  }
+}
+      }
+
+      
+
+
+
+        /* ====================== End of Responsivity ======================== */
+
+
+    /* ============================= Navbar End ================================= */
+
+    /* ================================================================ Section 0 ================================================================ */
+
+
+    </style>
+</head>
+<body>
+
+    <!-- ===========================Section 0================================= -->
+    <div class="greet">
+    <h2 id="greet"></h2>
+  </div>
+  
+
+    <section class="zero">
+        <!-- <div class="firstblock"></div> -->
+  
+        <!-- navbar -->
+  
+        <div class="navbar">
+          <nav class="sidebar">
+            <!-- <div class="logo"><img src="logo/logo.png" alt=""></div> -->
+            <div onclick=hidesidebar()><img src="cross.png" alt=""></div>
+            <div class="list">
+              <ul id="ul">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="blogs.html">blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="questionarie.html">Questionarie</a></li>
+                <a href="index.html"><button class="logout">Log Out</button></a>
+                <div class="login">
+                <!-- <button onclick=login() class="Signup">Sing-Up</button>
+                <button onclick=login() class="login">Log-In</button> -->
+                </div>
+              </ul>
+            </div>
+    
+            <!-- Hamburger -->
+    
+            <!-- <div class="burger" id="burger">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div> -->
+          </nav>
+    
+          <nav>
+            <div class="logo"><img src="logo.png" alt=""></div>
+            <div class="list">
+              <ul id="ul">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="blogs.html">blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="lines" onclick=showsidebar()><a href="#">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                </div>
+                </a>
+              </ul>
+          </nav>
+        </div>
+
+        <!-- login modal window -->
+        <!-- <div class="flexloginmodal">
+        <div class="loginmodal">
+            <div onclick=closeloginmodal() class="closeloginmodal"><img src="cross.png" alt=""></div>
+            <a href="login.html"><button>LoG-IN as Doctor</button></a>
+            <a href="login.html"><button>LoG-IN as User</button></a>
+        </div>
+        </div> -->
+  
+
+        <!-- user welcome greeting -->
+       
+
+        <div class="firstblock"></div>
+
+        <!-- search box -->
+        <div class="searchbox">
+            <p>Search about any disease below</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="search the disease">
+                <button onclick="redirect()">Search</button>
+            </div>
+        </div>
+  
+
+
+      </section>
+  
+      <!-- ========================Section 1========================= -->
+
+
+      <div class="headingnotebook">
+        <h1>Track your Health</h1>
+        <h5>By answering just simple questions</h5>
+      </div>
+      <a href="questionarie.html"><div class="notebook"><img src="note/calendar.gif" alt=""></div></a>
+
+
+      <section class="first">
+
+        <div class="headingsec1">
+        <h1>HealthCare: Your health companion</h1>
+        <h5>Empowering Health, Connecting Lives</h5>
+      </div>
+
+
+     
+
+        <!-- Our main Features -->
+
+        <div class="mainfeatures">
+            <div class="twofeature">
+                <a href="videocallinglist.html"><button onclick="login()" class="featurebtn"><div class="singlefeature videoconf"><img src="sec1/videoconsulting.png" alt=""><h3>Video Consultant</h3><p>Empowering Health, Connecting Lives</p></div></button></a>
+                <a href="tracking.html"><button onclick="login()" class="featurebtn"><div class="singlefeature scan"><img src="sec1/scanning.png" alt=""><h3>Scan</h3><p>Scan your affected body part</p></div></button></a>
+            </div>
+            <div class="twofeature">
+                <a href="textlist.html"><button onclick="login()" class="featurebtn"><div class="singlefeature textdoc"><img src="sec1/text.png" alt=""><h3>Text Doctors</h3><p>Chat with doctor</p></div></button></a>
+                <a href="questionarie.html"><button onclick="login()" class="featurebtn"><div class="singlefeature tracking"><img src="sec1/tracking.png" alt=""><h3>Track your Health</h3><p>track your health everydayr</p></div></button></a>
+            </div>
+        </div>
+
+
+        <!-- calling feature -->
+
+        
+        <div class="call">
+          <a href="calling.html">
+            <button class="call"><h2>Call Doctors directly!!!</h2> <br> <p class="call">call the best doctors of the field</p></button>
+          </a>  
+        </div>
+
+
+      </section>
+
+      <!-- =========================Section 2=========================== -->
+
+      <section class="second">
+        <div class="h1ofsec2">
+        <h1>Some Very Common Diorders</h1>
+        </div>
+        <div class="allcommondisease">
+            <div class="threecommondisease">
+                <div class="singlediseaseplusname"><a class="acne" href="acne.html"><div class="singlecommondisease acne"><img src="sec2/acne/acne-removebg.png" alt=""></div><p class="acne">Acne</p></a></div>
+                <div class="singlediseaseplusname"><a href="pimple.html"><div class="singlecommondisease pimple"><img src="sec2/pimple/pimple-bgremoved.png" alt=""></div><p class="pimple">Pimple</p></a></div>
+                <div class="singlediseaseplusname"><a href="asthama.html"><div class="singlecommondisease asthama"><img src="sec2/astama/astama.png" alt=""></div><p class="asthama">Astama</p></a></div>
+            </div>
+            <div class="threecommondisease">
+                <div class="singlediseaseplusname"><a href="arthritis.html"><div class="singlecommondisease arthritis"><img src="sec2/arthritis/arthritis-removebg.png" alt=""></div><p class="arthritis">Arthritis</p></a></div>
+                <div class="singlediseaseplusname"><a href="dandruff.html"><div class="singlecommondisease dandruff"><img src="sec2/dandruff/dandruff-removebg.png" alt=""></div><p class="dandruff">Dandruff</p></a></div>
+                <div class="singlediseaseplusname"><a href="headache.html"><div class="singlecommondisease headache"><img src="sec2/headache/headache.png" alt=""></div><p class="headache">Head Ache</p></a></div>
+            </div>
+            <div class="threecommondisease">
+              <div class="singlediseaseplusname"><a href="cold.html"><div class="singlecommondisease cold"><img src="sec2/cold and cough/cold-removebg-preview.png" alt=""></div><p class="cold">Cold</p></a></div>
+              <div class="singlediseaseplusname"><a href="dandruff.html"><div class="singlecommondisease stomachache"><img src="sec2/stomachache/stomachache-transformed.png" alt=""></div><p class="stomachache">Stomach Ache</p></a></div>
+              <div class="singlediseaseplusname"><a href="headache.html"><div class="singlecommondisease fever"><img src="sec2/fever/fever-removebg-preview.png" alt=""></div><p class="fever">Fever</p></a></div>
+          </div>
+        </div>
+        <div class="belowsec2">"Beyond Appointments, Beyond Expectations: Transforming Patient Experiences, One Click at a Time."</div>
+      </section>
+
+      <!-- ==============================Section 3========================== -->
+
+      <section class="third">
+
+        <div class="docheading">
+            <p>Know More</p> <p>From Our Doctors</p>
+        </div>
+      <div class="alldocvideos">
+        <div class="twodocvideos">
+            <div class="singledocvideo"><video src="doc1.mp4" controls="controls"></video><p class="video">doctor saying something blah blah one two three mic test doctor saying something blah blah one two three mic test</p></div>
+            <div class="singledocvideo"><video src="doc2.mp4" controls="controls"></video><p class="video">doctor saying something blah blah one two three mic test doctor saying something blah blah one two three mic test</p></div>
+        </div>
+        <div class="twodocvideos">
+            <div class="singledocvideo"><video src="doc3.mp4" controls="controls"></video><p class="video">doctor saying something blah blah one two three mic test doctor saying something blah blah one two three mic test</p></div>
+            <div class="singledocvideo"><video src="doc4.mp4" controls="controls"></video><p class="video">doctor saying something blah blah one two three mic test doctor saying something blah blah one two three mic test</p></div>
+        </div>
+      </div>
+
+      </section>
+
+      <!-- =============================Section 4============================= -->
+
+
+      
+      <div class="inbtwadd">
+        <img src="tablet/tablet.png" alt="">
+      </div>
+
+
+
+      <section class="fourth">
+
+      <h2 class="blogsheading">STAY INFORMED WITH SMARTCARE HEALTH AND WELLNESS BLOGS</h2>
+
+      <div class="slidecontainer">
+      
+      <button class="slideleftbutton" onclick="plusDivs(-1)">&#10094;</button>
+
+      <div class="BlogsSlide">
+        <div class="mySlides"><img src="blogs/Screenshot 2024-01-16 000118.png" alt=""></div>
+        <div class="mySlides"><img src="blogs/Screenshot 2024-01-16 000135.png" alt=""></div>
+        <div class="mySlides"><img src="blogs/Screenshot 2024-01-16 000149.png" alt=""></div>
+        <div class="mySlides"><img src="blogs/Screenshot 2024-01-16 000135.png" alt=""></div>
+      </div>
+
+        <button class="sliderightbutton" onclick="plusDivs(1)">&#10095;</button>
+
+        </div>
+      </section>
+
+      <!-- =================================Section 5 ============================== -->
+
+
+      <section class="fifth">
+        <div id="slideshow">
+          <div class="slide-wrapper">
+               
+          <!-- Define each of the slides
+           and write the content -->
+            
+              <div class="slide">
+                  <h1 class="slide-number">
+                      <img src="testimonials/testimonial.png" alt="">
+                  </h1> 
+              </div>
+              <div class="slide">
+                  <h1 class="slide-number">
+                    <img src="testimonials/testimonial2.png" alt="">
+                  </h1> 
+              </div>
+              <div class="slide">
+                  <h1 class="slide-number">
+                    <img src="testimonials/testimonial.png" alt="">
+                  </h1> 
+              </div>
+              <div class="slide">
+                  <h1 class="slide-number">
+                    <img src="testimonials/testimonial2.png" alt="">
+                  </h1> 
+              </div>
+          </div>
+      </div>
+      </section>
+
+      <!-- ===================================Section 6================================= -->
+
+      <footer class="background">
+        <p class="text-footer">
+          Copyright &copy; 2027 www.IUedu.com - All rights reserved (made by the greatest person alive in the world-- shri shri shri AAYUSH NIKAM)
+      </p>
+      </footer>
+    <script src="script.js"></script>
+
+    
+      <!-- log out -->
+
+      <button type="button" id="signoutbutton">sign out</button>
+      <h2 id="msg"></h2>
+      <!-- <h2 id="greet"></h2> -->
+  
+
+    <script>
+      let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+      let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+
+      let MsgHead = document.getElementById('msg');
+      let GreetHead = document.getElementById('greet');
+      let SignoutBtn = document.getElementById('signoutbutton');
+
+     
+
+      let Signout = ()=>{
+        sessionStorage.removeItem("user-cred");
+        sessionStorage.remove.Item("user-info");
+        window.location.href = 'login.html'
+      }
+
+      let CheckCred = ()=>{
+        if(!sessionStorage.getItem("user-creds"))
+          window.location.href = 'login.html'
+        else{
+          MsgHead.innerText = `user with email "${UserCreds.email}" logged in`;
+      GreetHead.innerHTML = `Welcome ${UserInfo.firstname + " " + UserInfo.lastname}!`;
+        }
+      }
+
+      window.addEventListener('load', CheckCred);
+      SignoutBtn.addEventListener('click', Signout);
+    </script>
+</body>
+</html>
