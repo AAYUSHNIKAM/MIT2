@@ -1,0 +1,41 @@
+<style>
+    div.firstblock{
+        background-image: url(bgtop.jpeg);
+        height: 20vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 103%;
+        background-size: cover;
+    }
+    
+.D9WLyEQaARfWqCTyVrpU{
+    top: -30vh;
+    position: relative;
+}
+</style>
+
+
+
+
+<html>
+
+
+
+<body>
+    <div class="firstblock"></div>
+    <div id="root"></div> 
+</body>
+
+<script src="https://resource.zegocloud.com/prebuilt/crypto-js.js"></script>
+<script src="https://resource.zegocloud.com/prebuilt/prebuiltToken.js"></script>
+<script src="https://zegocloud.github.io/zegocloud_prebuilt_webrtc/ZegoPrebuilt/index.umd.js"></script>
+<script>
+
+const TOKEN = generatePrebuiltToken(207432636,"e58c8935328451ee4d6b913e1bf0c274",'room2','UserID-' + Math.random(),'jack'+ Math.random());
+
+const zp = ZegoUIKitPrebuilt.create(TOKEN);
+zp.joinRoom({
+    container : document.querySelector("#root"),
+});
+</script>
+</html>
